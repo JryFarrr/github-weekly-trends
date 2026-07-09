@@ -1,0 +1,423 @@
+<title>Tren GitHub Mingguan</title>
+<style>
+  :root {
+    --bg: #f7f8f6;
+    --surface: #ffffff;
+    --ink: #24292f;
+    --muted: #59636e;
+    --accent: #1f883d;
+    --gold: #9a6700;
+    --border: #d8deda;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --ink: #e6edf3;
+      --muted: #9198a1;
+      --accent: #3fb950;
+      --gold: #d29922;
+      --border: #2b3138;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f8f6;
+    --surface: #ffffff;
+    --ink: #24292f;
+    --muted: #59636e;
+    --accent: #1f883d;
+    --gold: #9a6700;
+    --border: #d8deda;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --ink: #e6edf3;
+    --muted: #9198a1;
+    --accent: #3fb950;
+    --gold: #d29922;
+    --border: #2b3138;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  header.mast {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.25rem;
+  }
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .edisi-box { display: flex; flex-direction: column; gap: 0.25rem; }
+  .edisi-box label {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  select {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .lede {
+    font-size: 1.02rem;
+    max-width: 65ch;
+    margin: 1.5rem 0 0;
+  }
+  .lede strong { color: var(--accent); }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 1rem;
+  }
+  .chips button {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+  }
+  .chips button[aria-pressed="true"] {
+    color: var(--bg);
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .cards { display: flex; flex-direction: column; gap: 0.75rem; }
+  details.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  details.card[open] { border-color: var(--accent); }
+  summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.75rem;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible, .chips button:focus-visible, select:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .rank { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); min-width: 1.6rem; }
+  .repo { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; word-break: break-all; }
+  .repo .owner { font-weight: 400; color: var(--muted); }
+  .lang { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+  .dot {
+    display: inline-block;
+    width: 0.6em; height: 0.6em;
+    border-radius: 50%;
+    background: var(--muted);
+    margin-right: 0.3em;
+  }
+  .stars {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .body {
+    border-top: 1px solid var(--border);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+  .desc { color: var(--muted); font-style: italic; margin: 0; max-width: 65ch; }
+  .blok h3 {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.2rem;
+  }
+  .blok p { margin: 0; max-width: 65ch; }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .meta a { color: var(--accent); text-decoration: none; }
+  .meta a:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    details.card { transition: border-color 120ms ease; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <p class="eyebrow">Laporan mingguan · github trending</p>
+      <h1>Tren GitHub Mingguan</h1>
+    </div>
+    <div class="edisi-box">
+      <label for="edisi">Edisi</label>
+      <select id="edisi"></select>
+    </div>
+  </header>
+
+  <p class="lede" id="ringkasan"></p>
+
+  <nav class="chips" id="filter" aria-label="Filter bahasa pemrograman"></nav>
+
+  <main class="cards" id="cards"></main>
+
+  <footer>
+    Diperbarui otomatis tiap Minggu 00.00 WIB · Sumber: github.com/trending (mingguan) ·
+    Analisis ditulis oleh agen Claude dalam bahasa Indonesia.
+  </footer>
+</div>
+
+<!-- DATA: routine mingguan hanya mengganti isi blok JSON ini (edisi terbaru di indeks 0), lalu republish. -->
+<script type="application/json" id="data">
+{"editions":[
+{
+  "week_end": "2026-07-09",
+  "label": "3–9 Juli 2026",
+  "summary": "Minggu ini ekosistem agen AI menguasai daftar trending nyaris tanpa sisa — seluruh 10 repo teratas berhubungan dengan AI, dan sebagian besar berputar di sekitar coding agent seperti Claude Code dan Codex. Ada tiga pola besar: pertama, tooling di sekitar Claude Code meledak (plugin Codex resmi dari OpenAI, multiplexer terminal herdr, gateway hemat token OmniRoute, ekstensi video claude-video). Kedua, AI merambah domain spesifik: pentest otomatis (strix), notulen rapat lokal (meetily), sampai melamar kerja (ai-job-search). Ketiga, perusahaan raksasa ikut turun gunung — Meta merilis design system 'agent-ready' astryx dan Alibaba merilis page-agent. Bahasa dominan: TypeScript, Rust, dan Python.",
+  "repos": [
+    {
+      "name": "usestrix/strix",
+      "url": "https://github.com/usestrix/strix",
+      "lang": "Python",
+      "stars_week": 10274,
+      "stars_total": 39475,
+      "desc": "Alat penetration testing berbasis AI open-source untuk menemukan dan memperbaiki kerentanan aplikasi.",
+      "apa": "Agen AI yang melakukan penetration testing otomatis: memindai aplikasi Anda, menemukan celah keamanan, lalu mengusulkan perbaikannya.",
+      "use_case": "Tim keamanan dan developer memakainya untuk menguji aplikasi milik sendiri sebelum dirilis, program bug bounty, dan otomasi red-teaming — tanpa harus menyewa pentester manual untuk setiap rilis.",
+      "kenapa_viral": "Repo dengan bintang mingguan tertinggi (10 ribu+ dalam seminggu). Keamanan aplikasi adalah kekhawatiran nyata di era kode yang makin banyak ditulis AI, dan janji 'pentest otomatis yang sekalian memperbaiki' tepat sasaran. Lisensi Apache-2.0 membuatnya aman diadopsi perusahaan."
+    },
+    {
+      "name": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search",
+      "lang": "TypeScript",
+      "stars_week": 9677,
+      "stars_total": 17998,
+      "desc": "Framework lamaran kerja bertenaga AI yang dibangun di atas Claude Code.",
+      "apa": "Framework yang mengubah Claude Code menjadi asisten cari kerja: Anda fork reponya, isi profil, lalu Claude mengevaluasi lowongan, menyesuaikan CV, menulis surat lamaran, dan menyiapkan Anda untuk interview.",
+      "use_case": "Pencari kerja (terutama di bidang tech) yang ingin mengotomasi proses lamaran end-to-end: menyaring lowongan yang cocok, membuat CV yang disesuaikan per lowongan, dan latihan interview.",
+      "kenapa_viral": "Model 'fork-to-use' yang unik — 5.200+ fork membuktikan orang benar-benar memakainya, bukan sekadar menyimpan. Topiknya universal (semua orang butuh kerja), dan ini contoh mencolok tren baru: Claude Code dipakai untuk urusan hidup di luar coding."
+    },
+    {
+      "name": "Zackriya-Solutions/meetily",
+      "url": "https://github.com/Zackriya-Solutions/meetily",
+      "lang": "Rust",
+      "stars_week": 8366,
+      "stars_total": 22093,
+      "desc": "Asisten rapat AI yang mengutamakan privasi: transkripsi live, pemisahan pembicara, dan ringkasan — 100% berjalan lokal.",
+      "apa": "Aplikasi notulen rapat otomatis untuk macOS dan Windows: transkripsi langsung dengan Parakeet/Whisper (diklaim 4x lebih cepat), membedakan siapa berbicara apa (speaker diarization), lalu diringkas oleh LLM lokal via Ollama — tanpa cloud sama sekali.",
+      "use_case": "Perusahaan atau individu dengan aturan privasi ketat (hukum, kesehatan, keuangan) yang butuh notulen rapat otomatis tapi tidak boleh mengirim audio rapat ke server pihak ketiga.",
+      "kenapa_viral": "Reaksi balik terhadap notetaker berbasis cloud yang merekam rapat ke server orang lain. Klaim performa konkret (4x lebih cepat) plus stack Rust yang ringan membuatnya menonjol, dan posisinya sebagai 'notetaker self-hosted #1' menarik komunitas privacy-first."
+    },
+    {
+      "name": "asgeirtj/system_prompts_leaks",
+      "url": "https://github.com/asgeirtj/system_prompts_leaks",
+      "lang": "JavaScript",
+      "stars_week": 6182,
+      "stars_total": 54920,
+      "desc": "Kumpulan system prompt hasil ekstraksi dari Claude, ChatGPT, Gemini, Grok, dan lainnya — diperbarui rutin.",
+      "apa": "Arsip system prompt (instruksi internal) berbagai produk AI besar — Claude Fable 5, ChatGPT 5.5, Gemini 3.5, Copilot, Cursor, Perplexity — yang diekstrak dan didokumentasikan komunitas.",
+      "use_case": "Belajar prompt engineering dari cara vendor besar menulis instruksi untuk modelnya sendiri, riset transparansi AI, dan referensi saat membangun agen atau chatbot sendiri.",
+      "kenapa_viral": "Rasa penasaran 'di balik layar' yang tak pernah habis. Repo ini melonjak setiap ada rilis model baru — dan minggu-minggu ini ramai rilis (Claude Fable 5, GPT 5.5), jadi orang berbondong-bondong melihat instruksi internalnya."
+    },
+    {
+      "name": "facebook/astryx",
+      "url": "https://github.com/facebook/astryx",
+      "lang": "TypeScript",
+      "stars_week": 4943,
+      "stars_total": 7405,
+      "desc": "Design system open source dari Meta yang sepenuhnya bisa dikustomisasi dan siap dipakai agen AI.",
+      "apa": "Design system (komponen UI + token desain) dari Meta yang dirancang 'agent ready' — strukturnya dibuat agar mudah dipahami dan dimodifikasi oleh agen AI coding, bukan hanya oleh manusia.",
+      "use_case": "Tim frontend yang membangun aplikasi dengan bantuan AI coding agent: komponennya konsisten dan terdokumentasi sehingga agen bisa merakit UI yang rapi tanpa menghasilkan desain acak-acakan.",
+      "kenapa_viral": "Nama besar Meta (repo baru dibuat Januari 2026, langsung 7 ribu bintang) plus positioning yang pas dengan zeitgeist: semua orang sedang mencari cara agar output UI dari AI tidak berantakan — 'design system untuk era agen' menjawab itu."
+    },
+    {
+      "name": "openai/codex-plugin-cc",
+      "url": "https://github.com/openai/codex-plugin-cc",
+      "lang": "JavaScript",
+      "stars_week": 4890,
+      "stars_total": 27096,
+      "desc": "Plugin resmi OpenAI untuk memakai Codex dari dalam Claude Code.",
+      "apa": "Plugin resmi dari OpenAI yang menghadirkan Codex di dalam Claude Code — Anda bisa menyuruh Codex me-review kode atau mendelegasikan tugas kepadanya tanpa keluar dari sesi Claude Code.",
+      "use_case": "Developer yang memakai Claude Code sebagai 'markas' tapi ingin second opinion atau tenaga tambahan dari model OpenAI: review silang antar-model dan pembagian tugas antar coding agent.",
+      "kenapa_viral": "Keanehan yang menarik perhatian: OpenAI merilis plugin resmi untuk tool milik Anthropic, pesaingnya sendiri. Ini dibaca sebagai pengakuan bahwa Claude Code jadi platform de-facto, dan interoperabilitas antar coding agent adalah topik terpanas 2026."
+    },
+    {
+      "name": "ogulcancelik/herdr",
+      "url": "https://github.com/ogulcancelik/herdr",
+      "lang": "Rust",
+      "stars_week": 4754,
+      "stars_total": 14706,
+      "desc": "Multiplexer agen yang hidup di terminal Anda.",
+      "apa": "Semacam tmux untuk coding agent: satu antarmuka terminal untuk menjalankan, memantau, dan berpindah antara banyak agen (Claude Code, Codex, dll.) yang bekerja paralel di banyak proyek.",
+      "use_case": "Developer yang menjalankan beberapa coding agent sekaligus — misal satu agen memperbaiki bug di repo A sementara agen lain menulis fitur di repo B — dan butuh 'menara kontrol' untuk menggembalakan semuanya.",
+      "kenapa_viral": "Workflow multi-agent berubah dari eksperimen jadi kebiasaan harian pada 2026, dan rasa sakitnya nyata: tab terminal berserakan. Nama yang mudah diingat (herdr = penggembala), dibangun dengan Rust, dan demo TUI yang memuaskan secara visual."
+    },
+    {
+      "name": "diegosouzapw/OmniRoute",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "lang": "TypeScript",
+      "stars_week": 4424,
+      "stars_total": 14172,
+      "desc": "Gateway AI gratis: satu endpoint untuk 231+ provider, dengan kompresi token dan auto-fallback.",
+      "apa": "Gateway/proxy yang menyatukan 231+ provider LLM (50+ di antaranya gratis) di satu endpoint, lalu menghubungkannya ke Claude Code, Codex, Cursor, Cline, dan Copilot — lengkap dengan kompresi token (klaim hemat 15–95%) dan fallback otomatis saat satu provider limit.",
+      "use_case": "Developer yang sering mentok limit atau ingin menekan tagihan AI: saat kuota model utama habis, request otomatis dialihkan ke provider lain sehingga sesi coding tidak pernah terputus.",
+      "kenapa_viral": "Menjawab keluhan paling umum pengguna coding agent: biaya token dan rate limit. Janji 'never stop coding' plus daftar integrasi yang panjang membuatnya gampang dicoba siapa saja."
+    },
+    {
+      "name": "alibaba/page-agent",
+      "url": "https://github.com/alibaba/page-agent",
+      "lang": "TypeScript",
+      "stars_week": 4295,
+      "stars_total": 25431,
+      "desc": "Agen GUI in-page berbasis JavaScript — kendalikan antarmuka web dengan bahasa natural.",
+      "apa": "Library JavaScript dari Alibaba yang disisipkan langsung ke halaman web, lalu pengguna bisa mengendalikan antarmuka situs itu dengan perintah bahasa natural — tanpa ekstensi browser atau driver otomasi.",
+      "use_case": "Pemilik produk web yang ingin menambahkan 'asisten operasional' ke situsnya (misal: 'buatkan laporan penjualan bulan lalu' dan agen mengklik menu-menunya), atau otomasi dan onboarding pengguna di aplikasi web internal.",
+      "kenapa_viral": "Barrier untuk mencoba sangat rendah — cukup satu tag script di halaman, tanpa infrastruktur browser-automation. Didukung nama Alibaba dan demo yang langsung terasa 'ajaib' membuatnya menyebar cepat."
+    },
+    {
+      "name": "bradautomates/claude-video",
+      "url": "https://github.com/bradautomates/claude-video",
+      "lang": "Python",
+      "stars_week": 2903,
+      "stars_total": 6527,
+      "desc": "Memberi Claude kemampuan menonton video apa pun.",
+      "apa": "Ekstensi untuk Claude Code: perintah /watch mengunduh video, mengekstrak frame-frame kunci, mentranskripsi audionya, lalu menyerahkan semuanya ke Claude untuk dianalisis — efektifnya Claude jadi bisa 'menonton' video.",
+      "use_case": "Meringkas rekaman meeting atau kuliah, menganalisis video tutorial tanpa menontonnya penuh, atau menambang informasi dari konten YouTube langsung dari terminal.",
+      "kenapa_viral": "Mengisi celah kemampuan yang belum ada bawaan di Claude: video. Konsepnya satu kalimat, demonya memikat, dan repo baru berumur dua bulan ini menunggangi gelombang besar ekosistem plugin Claude Code."
+    }
+  ]
+}
+]}
+</script>
+
+<script>
+  const DATA = JSON.parse(document.getElementById("data").textContent);
+  const LANG_COLORS = {
+    Python: "#3572a5", TypeScript: "#3178c6", JavaScript: "#f1e05a",
+    Rust: "#dea584", Go: "#00add8", "C#": "#178600", "C++": "#f34b7d",
+    Java: "#b07219", Ruby: "#701516", PHP: "#4f5d95", Swift: "#f05138",
+    Kotlin: "#a97bff", C: "#555555", Shell: "#89e051", HTML: "#e34c26"
+  };
+  const fmt = n => n.toLocaleString("id-ID");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  let edIdx = 0, langFilter = "*";
+
+  const selEl = document.getElementById("edisi");
+  DATA.editions.forEach((ed, i) => {
+    const o = document.createElement("option");
+    o.value = i;
+    o.textContent = ed.label;
+    selEl.appendChild(o);
+  });
+  selEl.addEventListener("change", () => { edIdx = +selEl.value; langFilter = "*"; render(); });
+
+  function render() {
+    const ed = DATA.editions[edIdx];
+    document.getElementById("ringkasan").textContent = ed.summary;
+
+    const langs = [...new Set(ed.repos.map(r => r.lang))];
+    document.getElementById("filter").innerHTML =
+      [`<button aria-pressed="${langFilter === "*"}" data-lang="*">Semua (${ed.repos.length})</button>`]
+        .concat(langs.map(l => {
+          const n = ed.repos.filter(r => r.lang === l).length;
+          return `<button aria-pressed="${langFilter === l}" data-lang="${esc(l)}">${esc(l)} (${n})</button>`;
+        })).join("");
+
+    document.getElementById("cards").innerHTML = ed.repos
+      .map((r, i) => ({ r, i }))
+      .filter(({ r }) => langFilter === "*" || r.lang === langFilter)
+      .map(({ r, i }) => {
+        const [owner, repo] = r.name.split("/");
+        const dot = LANG_COLORS[r.lang] || "var(--muted)";
+        return `<details class="card">
+          <summary>
+            <span class="rank">#${i + 1}</span>
+            <span class="repo"><span class="owner">${esc(owner)}/</span>${esc(repo)}</span>
+            <span class="lang"><span class="dot" style="background:${dot}"></span>${esc(r.lang)}</span>
+            <span class="stars">+${fmt(r.stars_week)} ★ minggu ini</span>
+          </summary>
+          <div class="body">
+            <p class="desc">${esc(r.desc)}</p>
+            <div class="blok"><h3>Apa ini</h3><p>${esc(r.apa)}</p></div>
+            <div class="blok"><h3>Use case</h3><p>${esc(r.use_case)}</p></div>
+            <div class="blok"><h3>Kenapa viral</h3><p>${esc(r.kenapa_viral)}</p></div>
+            <div class="meta">
+              <span>★ total ${fmt(r.stars_total)}</span>
+              <a href="${esc(r.url)}" target="_blank" rel="noopener">Buka repo ↗</a>
+            </div>
+          </div>
+        </details>`;
+      }).join("");
+  }
+
+  document.getElementById("filter").addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    langFilter = b.dataset.lang;
+    render();
+  });
+
+  render();
+</script>
