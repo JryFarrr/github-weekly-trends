@@ -51,9 +51,18 @@ Langkah:
    lama tetap di belakangnya (arsip lengkap dipertahankan). Jangan mengubah
    CSS/JS kecuali ada bug. Validasi JSON-nya parse sebelum lanjut.
 
-6. **Republish.** Panggil tool Artifact dengan parameter `url` = URL artifact di
-   atas (wajib, supaya URL tetap), favicon 📈 (jangan diganti), title tetap
-   "Tren GitHub Mingguan", label versi = rentang minggu (mis. "10-16-jul").
+6. **Republish artifact.** Panggil tool Artifact dengan parameter `url` = URL
+   artifact di atas (wajib, supaya URL tetap), favicon 📈 (jangan diganti),
+   title tetap "Tren GitHub Mingguan", label versi = rentang minggu
+   (mis. "10-16-jul").
+
+7. **Push ke GitHub (untuk Vercel).** Repo
+   `https://github.com/JryFarrr/github-weekly-trends` sudah ter-checkout di
+   environment kerjamu. Tulis HTML final ke `site/trends.html`, jalankan
+   `python3 build_index.py` (menghasilkan `index.html` untuk Vercel), lalu
+   commit dengan pesan `feat: edisi <label>` dan push ke `main`. Vercel akan
+   auto-deploy dari push itu. Jika push gagal, jangan gagalkan seluruh run —
+   artifact yang sudah ter-republish tetap sah; laporkan kegagalannya saja.
 
 Aturan: seluruh teks berbahasa Indonesia; tidak boleh ada resource eksternal di
 HTML (CSP artifact); jika ragu antara menimpa atau tidak — jangan menimpa.
