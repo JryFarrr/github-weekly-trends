@@ -257,125 +257,244 @@
 
 <!-- DATA: routine mingguan hanya mengganti isi blok JSON ini (edisi terbaru di indeks 0), lalu republish. -->
 <script type="application/json" id="data">
-{"editions":[
 {
-  "week_end": "2026-07-09",
-  "label": "3–9 Juli 2026",
-  "summary": "Minggu ini ekosistem agen AI menguasai daftar trending nyaris tanpa sisa — seluruh 10 repo teratas berhubungan dengan AI, dan sebagian besar berputar di sekitar coding agent seperti Claude Code dan Codex. Ada tiga pola besar: pertama, tooling di sekitar Claude Code meledak (plugin Codex resmi dari OpenAI, multiplexer terminal herdr, gateway hemat token OmniRoute, ekstensi video claude-video). Kedua, AI merambah domain spesifik: pentest otomatis (strix), notulen rapat lokal (meetily), sampai melamar kerja (ai-job-search). Ketiga, perusahaan raksasa ikut turun gunung — Meta merilis design system 'agent-ready' astryx dan Alibaba merilis page-agent. Bahasa dominan: TypeScript, Rust, dan Python.",
-  "repos": [
+ "editions": [
+  {
+   "week_end": "2026-07-12",
+   "label": "6–12 Juli 2026",
+   "summary": "Minggu ini trending GitHub didominasi infrastruktur untuk AI agent: sandbox eksekusi super cepat (CubeSandbox), server MCP untuk kontrol sistem (DesktopCommanderMCP), serta multiplexer dan ADE untuk menjalankan banyak coding agent sekaligus (herdr, orca). Muncul juga kolaborasi lintas-vendor yang tak biasa lewat plugin resmi OpenAI untuk Claude Code (codex-plugin-cc), tanda ekosistem coding agent kini saling terhubung antar perusahaan. Di luar gelombang agent, arsip system prompt AI yang terus diperbarui (system_prompts_leaks) dan pustaka klasik abseil-cpp dari Google menunjukkan minat komunitas tetap beragam, tidak melulu soal tooling agent generasi terbaru.",
+   "repos": [
     {
-      "name": "usestrix/strix",
-      "url": "https://github.com/usestrix/strix",
-      "lang": "Python",
-      "stars_week": 10274,
-      "stars_total": 39475,
-      "desc": "Alat penetration testing berbasis AI open-source untuk menemukan dan memperbaiki kerentanan aplikasi.",
-      "apa": "Agen AI yang melakukan penetration testing otomatis: memindai aplikasi Anda, menemukan celah keamanan, lalu mengusulkan perbaikannya.",
-      "use_case": "Tim keamanan dan developer memakainya untuk menguji aplikasi milik sendiri sebelum dirilis, program bug bounty, dan otomasi red-teaming — tanpa harus menyewa pentester manual untuk setiap rilis.",
-      "kenapa_viral": "Repo dengan bintang mingguan tertinggi (10 ribu+ dalam seminggu). Keamanan aplikasi adalah kekhawatiran nyata di era kode yang makin banyak ditulis AI, dan janji 'pentest otomatis yang sekalian memperbaiki' tepat sasaran. Lisensi Apache-2.0 membuatnya aman diadopsi perusahaan."
+     "name": "Zackriya-Solutions/meetily",
+     "url": "https://github.com/Zackriya-Solutions/meetily",
+     "lang": "Rust",
+     "stars_week": 8579,
+     "stars_total": 23396,
+     "desc": "Asisten rapat AI privasi-utama dengan transkripsi langsung, pemisahan pembicara, dan ringkasan lokal.",
+     "apa": "Asisten rapat open-source berbasis Rust dan Tauri yang menjalankan transkripsi, pemisahan pembicara, dan ringkasan sepenuhnya di perangkat pengguna, tanpa mengirim audio ke cloud.",
+     "use_case": "Dipakai profesional dan perusahaan di sektor sensitif seperti hukum, kesehatan, dan konsultasi pertahanan yang butuh mencatat rapat tanpa risiko data bocor ke pihak ketiga.",
+     "kenapa_viral": "Rilis v0.4.0 awal Juni 2026 dengan dukungan model Parakeet/Whisper yang 4x lebih cepat, ditambah peluncuran versi komersial Meetily PRO, mendorong hampir 8.600 star baru dalam sepekan."
     },
     {
-      "name": "MadsLorentzen/ai-job-search",
-      "url": "https://github.com/MadsLorentzen/ai-job-search",
-      "lang": "TypeScript",
-      "stars_week": 9677,
-      "stars_total": 17998,
-      "desc": "Framework lamaran kerja bertenaga AI yang dibangun di atas Claude Code.",
-      "apa": "Framework yang mengubah Claude Code menjadi asisten cari kerja: Anda fork reponya, isi profil, lalu Claude mengevaluasi lowongan, menyesuaikan CV, menulis surat lamaran, dan menyiapkan Anda untuk interview.",
-      "use_case": "Pencari kerja (terutama di bidang tech) yang ingin mengotomasi proses lamaran end-to-end: menyaring lowongan yang cocok, membuat CV yang disesuaikan per lowongan, dan latihan interview.",
-      "kenapa_viral": "Model 'fork-to-use' yang unik — 5.200+ fork membuktikan orang benar-benar memakainya, bukan sekadar menyimpan. Topiknya universal (semua orang butuh kerja), dan ini contoh mencolok tren baru: Claude Code dipakai untuk urusan hidup di luar coding."
+     "name": "wonderwhy-er/DesktopCommanderMCP",
+     "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+     "lang": "TypeScript",
+     "stars_week": 1451,
+     "stars_total": 7882,
+     "desc": "Server MCP yang memberi Claude kontrol terminal, pencarian sistem file, dan penyuntingan diff.",
+     "apa": "Server Model Context Protocol yang memperluas kemampuan Claude dengan akses tingkat sistem: menjalankan perintah terminal, mencari dan menyunting file secara presisi.",
+     "use_case": "Dipakai developer yang ingin menggantikan IDE AI berbayar seperti Cursor atau Windsurf, cukup memakai langganan Claude Pro yang sudah mereka miliki.",
+     "kenapa_viral": "Rilis v0.2.44 pada 9 Juli 2026 (dari total 37 rilis) menjaga proyek tetap aktif, sejalan dengan tren developer memindahkan workflow ke server MCP, menambah lebih dari 1.450 star baru."
     },
     {
-      "name": "Zackriya-Solutions/meetily",
-      "url": "https://github.com/Zackriya-Solutions/meetily",
-      "lang": "Rust",
-      "stars_week": 8366,
-      "stars_total": 22093,
-      "desc": "Asisten rapat AI yang mengutamakan privasi: transkripsi live, pemisahan pembicara, dan ringkasan — 100% berjalan lokal.",
-      "apa": "Aplikasi notulen rapat otomatis untuk macOS dan Windows: transkripsi langsung dengan Parakeet/Whisper (diklaim 4x lebih cepat), membedakan siapa berbicara apa (speaker diarization), lalu diringkas oleh LLM lokal via Ollama — tanpa cloud sama sekali.",
-      "use_case": "Perusahaan atau individu dengan aturan privasi ketat (hukum, kesehatan, keuangan) yang butuh notulen rapat otomatis tapi tidak boleh mengirim audio rapat ke server pihak ketiga.",
-      "kenapa_viral": "Reaksi balik terhadap notetaker berbasis cloud yang merekam rapat ke server orang lain. Klaim performa konkret (4x lebih cepat) plus stack Rust yang ringan membuatnya menonjol, dan posisinya sebagai 'notetaker self-hosted #1' menarik komunitas privacy-first."
+     "name": "openai/codex-plugin-cc",
+     "url": "https://github.com/openai/codex-plugin-cc",
+     "lang": "JavaScript",
+     "stars_week": 4030,
+     "stars_total": 27894,
+     "desc": "Plugin resmi OpenAI yang menghadirkan Codex ke dalam Claude Code untuk review kode dan delegasi tugas.",
+     "apa": "Plugin yang mengintegrasikan Codex milik OpenAI langsung ke Claude Code, memungkinkan review kode standar maupun adversarial serta pendelegasian tugas tanpa berpindah aplikasi.",
+     "use_case": "Dipakai developer yang menjadikan Claude Code sebagai driver utama tapi ingin memanfaatkan kemampuan review dan eksekusi background dari Codex secara paralel.",
+     "kenapa_viral": "Kolaborasi lintas-vendor yang tak biasa — OpenAI membangun plugin untuk ekosistem Claude Code — ditambah rilis v1.0.6 pada 8 Juli 2026, memicu lebih dari 4.000 star baru dalam sepekan."
     },
     {
-      "name": "asgeirtj/system_prompts_leaks",
-      "url": "https://github.com/asgeirtj/system_prompts_leaks",
-      "lang": "JavaScript",
-      "stars_week": 6182,
-      "stars_total": 54920,
-      "desc": "Kumpulan system prompt hasil ekstraksi dari Claude, ChatGPT, Gemini, Grok, dan lainnya — diperbarui rutin.",
-      "apa": "Arsip system prompt (instruksi internal) berbagai produk AI besar — Claude Fable 5, ChatGPT 5.5, Gemini 3.5, Copilot, Cursor, Perplexity — yang diekstrak dan didokumentasikan komunitas.",
-      "use_case": "Belajar prompt engineering dari cara vendor besar menulis instruksi untuk modelnya sendiri, riset transparansi AI, dan referensi saat membangun agen atau chatbot sendiri.",
-      "kenapa_viral": "Rasa penasaran 'di balik layar' yang tak pernah habis. Repo ini melonjak setiap ada rilis model baru — dan minggu-minggu ini ramai rilis (Claude Fable 5, GPT 5.5), jadi orang berbondong-bondong melihat instruksi internalnya."
+     "name": "TencentCloud/CubeSandbox",
+     "url": "https://github.com/TencentCloud/CubeSandbox",
+     "lang": "Rust",
+     "stars_week": 2416,
+     "stars_total": 9763,
+     "desc": "Sandbox ringan, konkuren, dan aman untuk menjalankan AI agent.",
+     "apa": "Layanan sandbox berbasis RustVMM dan KVM yang bisa boot sandbox baru dalam kurang dari 60 milidetik dengan konsumsi memori di bawah 5MB per instance.",
+     "use_case": "Dipakai penyedia platform AI agent yang perlu menjalankan banyak sandbox terisolasi secara bersamaan, dengan kompatibilitas SDK E2B untuk memudahkan migrasi.",
+     "kenapa_viral": "Rilis versi 0.5 di Juli 2026 menambahkan AutoPause/AutoResume, dukungan ARM64 native, dan deployment cluster via Terraform, mendorong lebih dari 2.400 star baru."
     },
     {
-      "name": "facebook/astryx",
-      "url": "https://github.com/facebook/astryx",
-      "lang": "TypeScript",
-      "stars_week": 4943,
-      "stars_total": 7405,
-      "desc": "Design system open source dari Meta yang sepenuhnya bisa dikustomisasi dan siap dipakai agen AI.",
-      "apa": "Design system (komponen UI + token desain) dari Meta yang dirancang 'agent ready' — strukturnya dibuat agar mudah dipahami dan dimodifikasi oleh agen AI coding, bukan hanya oleh manusia.",
-      "use_case": "Tim frontend yang membangun aplikasi dengan bantuan AI coding agent: komponennya konsisten dan terdokumentasi sehingga agen bisa merakit UI yang rapi tanpa menghasilkan desain acak-acakan.",
-      "kenapa_viral": "Nama besar Meta (repo baru dibuat Januari 2026, langsung 7 ribu bintang) plus positioning yang pas dengan zeitgeist: semua orang sedang mencari cara agar output UI dari AI tidak berantakan — 'design system untuk era agen' menjawab itu."
+     "name": "abseil/abseil-cpp",
+     "url": "https://github.com/abseil/abseil-cpp",
+     "lang": "C++",
+     "stars_week": 229,
+     "stars_total": 17937,
+     "desc": "Kumpulan pustaka umum C++ yang melengkapi standard library.",
+     "apa": "Kumpulan pustaka C++ dari Google yang menyediakan utilitas seperti hash table Swiss table, primitif konkurensi, dan penanganan status/error yang tidak ada di STL standar.",
+     "use_case": "Dipakai luas oleh proyek C++ skala besar, termasuk internal Google, yang butuh komponen teruji produksi di luar cakupan pustaka standar.",
+     "kenapa_viral": "Proyek matang ini masuk trending karena momentum rilis LTS terbaru (Mei 2026) dan filosofi 'live-at-head' komunitas C++ yang rutin mengikuti pembaruan master, bukan lonjakan viral mendadak."
     },
     {
-      "name": "openai/codex-plugin-cc",
-      "url": "https://github.com/openai/codex-plugin-cc",
-      "lang": "JavaScript",
-      "stars_week": 4890,
-      "stars_total": 27096,
-      "desc": "Plugin resmi OpenAI untuk memakai Codex dari dalam Claude Code.",
-      "apa": "Plugin resmi dari OpenAI yang menghadirkan Codex di dalam Claude Code — Anda bisa menyuruh Codex me-review kode atau mendelegasikan tugas kepadanya tanpa keluar dari sesi Claude Code.",
-      "use_case": "Developer yang memakai Claude Code sebagai 'markas' tapi ingin second opinion atau tenaga tambahan dari model OpenAI: review silang antar-model dan pembagian tugas antar coding agent.",
-      "kenapa_viral": "Keanehan yang menarik perhatian: OpenAI merilis plugin resmi untuk tool milik Anthropic, pesaingnya sendiri. Ini dibaca sebagai pengakuan bahwa Claude Code jadi platform de-facto, dan interoperabilitas antar coding agent adalah topik terpanas 2026."
+     "name": "ogulcancelik/herdr",
+     "url": "https://github.com/ogulcancelik/herdr",
+     "lang": "Rust",
+     "stars_week": 4349,
+     "stars_total": 15655,
+     "desc": "Multiplexer agen berbasis terminal untuk mengelola banyak AI agent sekaligus.",
+     "apa": "Multiplexer terminal mirip tmux tapi dirancang khusus untuk AI agent, memungkinkan sesi tetap hidup dan bisa disambungkan kembali lewat SSH.",
+     "use_case": "Dipakai developer yang menjalankan beberapa coding agent seperti Claude Code secara paralel dan ingin bisa 'pergi lalu kembali' tanpa kehilangan sesi kerja.",
+     "kenapa_viral": "Rilis v0.7.3 pada 7 Juli 2026 serta topik 'claude-code' dan 'agent-orchestration' yang sedang naik daun mendorong hampir 4.350 star baru dalam sepekan."
     },
     {
-      "name": "ogulcancelik/herdr",
-      "url": "https://github.com/ogulcancelik/herdr",
-      "lang": "Rust",
-      "stars_week": 4754,
-      "stars_total": 14706,
-      "desc": "Multiplexer agen yang hidup di terminal Anda.",
-      "apa": "Semacam tmux untuk coding agent: satu antarmuka terminal untuk menjalankan, memantau, dan berpindah antara banyak agen (Claude Code, Codex, dll.) yang bekerja paralel di banyak proyek.",
-      "use_case": "Developer yang menjalankan beberapa coding agent sekaligus — misal satu agen memperbaiki bug di repo A sementara agen lain menulis fitur di repo B — dan butuh 'menara kontrol' untuk menggembalakan semuanya.",
-      "kenapa_viral": "Workflow multi-agent berubah dari eksperimen jadi kebiasaan harian pada 2026, dan rasa sakitnya nyata: tab terminal berserakan. Nama yang mudah diingat (herdr = penggembala), dibangun dengan Rust, dan demo TUI yang memuaskan secara visual."
+     "name": "asgeirtj/system_prompts_leaks",
+     "url": "https://github.com/asgeirtj/system_prompts_leaks",
+     "lang": "JavaScript",
+     "stars_week": 7731,
+     "stars_total": 56493,
+     "desc": "Kumpulan system prompt yang diekstrak dari berbagai platform AI besar.",
+     "apa": "Arsip yang mengumpulkan system prompt bocor atau hasil ekstraksi dari chatbot AI besar seperti Claude, ChatGPT, Gemini, dan Grok.",
+     "use_case": "Dipakai peneliti, praktisi prompt engineering, dan developer yang ingin memahami cara vendor AI menyusun instruksi internal model mereka.",
+     "kenapa_viral": "Update rutin mengikuti rilis model baru, termasuk system prompt Claude Sonnet 5 (1 Juli 2026) dan GPT-5.6 (10 Juli 2026), menjaga repo lama ini tetap relevan dan menambah 7.700+ star dalam sepekan."
     },
     {
-      "name": "diegosouzapw/OmniRoute",
-      "url": "https://github.com/diegosouzapw/OmniRoute",
-      "lang": "TypeScript",
-      "stars_week": 4424,
-      "stars_total": 14172,
-      "desc": "Gateway AI gratis: satu endpoint untuk 231+ provider, dengan kompresi token dan auto-fallback.",
-      "apa": "Gateway/proxy yang menyatukan 231+ provider LLM (50+ di antaranya gratis) di satu endpoint, lalu menghubungkannya ke Claude Code, Codex, Cursor, Cline, dan Copilot — lengkap dengan kompresi token (klaim hemat 15–95%) dan fallback otomatis saat satu provider limit.",
-      "use_case": "Developer yang sering mentok limit atau ingin menekan tagihan AI: saat kuota model utama habis, request otomatis dialihkan ke provider lain sehingga sesi coding tidak pernah terputus.",
-      "kenapa_viral": "Menjawab keluhan paling umum pengguna coding agent: biaya token dan rate limit. Janji 'never stop coding' plus daftar integrasi yang panjang membuatnya gampang dicoba siapa saja."
+     "name": "diegosouzapw/OmniRoute",
+     "url": "https://github.com/diegosouzapw/OmniRoute",
+     "lang": "TypeScript",
+     "stars_week": 4375,
+     "stars_total": 15979,
+     "desc": "Gateway AI gratis yang mendukung 231+ provider dengan kompresi token dan dukungan multi-platform.",
+     "apa": "Gateway yang menyatukan akses ke 231+ provider LLM lewat satu endpoint, lengkap dengan kompresi token dan failover otomatis antar provider.",
+     "use_case": "Dipakai developer yang ingin menghemat biaya API dengan memanfaatkan tier gratis banyak provider sekaligus, terhubung ke Claude Code, Cursor, Copilot, dan agent CLI lain.",
+     "kenapa_viral": "Rilis beruntun versi 3.8.x dengan fitur kompresi token dan penjadwalan kuota tim mendorong momentum kuat, menambah lebih dari 4.300 star baru dalam sepekan."
     },
     {
-      "name": "alibaba/page-agent",
-      "url": "https://github.com/alibaba/page-agent",
-      "lang": "TypeScript",
-      "stars_week": 4295,
-      "stars_total": 25431,
-      "desc": "Agen GUI in-page berbasis JavaScript — kendalikan antarmuka web dengan bahasa natural.",
-      "apa": "Library JavaScript dari Alibaba yang disisipkan langsung ke halaman web, lalu pengguna bisa mengendalikan antarmuka situs itu dengan perintah bahasa natural — tanpa ekstensi browser atau driver otomasi.",
-      "use_case": "Pemilik produk web yang ingin menambahkan 'asisten operasional' ke situsnya (misal: 'buatkan laporan penjualan bulan lalu' dan agen mengklik menu-menunya), atau otomasi dan onboarding pengguna di aplikasi web internal.",
-      "kenapa_viral": "Barrier untuk mencoba sangat rendah — cukup satu tag script di halaman, tanpa infrastruktur browser-automation. Didukung nama Alibaba dan demo yang langsung terasa 'ajaib' membuatnya menyebar cepat."
+     "name": "stablyai/orca",
+     "url": "https://github.com/stablyai/orca",
+     "lang": "TypeScript",
+     "stars_week": 4368,
+     "stars_total": 16639,
+     "desc": "Application development environment untuk mengoordinasikan armada agen paralel.",
+     "apa": "ADE (application development environment) yang menjalankan banyak coding agent seperti Claude Code dan Codex secara paralel di git worktree terpisah, lalu membandingkan hasilnya.",
+     "use_case": "Dipakai developer yang ingin membandingkan output beberapa agent untuk prompt yang sama sebelum memilih hasil terbaik, termasuk lewat companion app mobile.",
+     "kenapa_viral": "Ritme pengembangan sangat agresif dengan update harian dan lebih dari 810 rilis menarik lebih dari 4.350 star baru, sejalan dengan tren 'multi-agent orchestration'."
     },
     {
-      "name": "bradautomates/claude-video",
-      "url": "https://github.com/bradautomates/claude-video",
-      "lang": "Python",
-      "stars_week": 2903,
-      "stars_total": 6527,
-      "desc": "Memberi Claude kemampuan menonton video apa pun.",
-      "apa": "Ekstensi untuk Claude Code: perintah /watch mengunduh video, mengekstrak frame-frame kunci, mentranskripsi audionya, lalu menyerahkan semuanya ke Claude untuk dianalisis — efektifnya Claude jadi bisa 'menonton' video.",
-      "use_case": "Meringkas rekaman meeting atau kuliah, menganalisis video tutorial tanpa menontonnya penuh, atau menambang informasi dari konten YouTube langsung dari terminal.",
-      "kenapa_viral": "Mengisi celah kemampuan yang belum ada bawaan di Claude: video. Konsepnya satu kalimat, demonya memikat, dan repo baru berumur dua bulan ini menunggangi gelombang besar ekosistem plugin Claude Code."
+     "name": "bradautomates/claude-video",
+     "url": "https://github.com/bradautomates/claude-video",
+     "lang": "Python",
+     "stars_week": 4399,
+     "stars_total": 7717,
+     "desc": "Alat yang memungkinkan Claude menganalisis video lewat ekstraksi frame dan transkripsi.",
+     "apa": "Skill yang memberi Claude kemampuan 'menonton' video: mengunduh, mengekstrak frame, dan mentranskripsi audio, lalu menjawab berdasarkan konten video sebenarnya.",
+     "use_case": "Dipakai untuk menganalisis video kompetitor, mendiagnosis bug dari rekaman layar, atau meringkas konten video panjang dari YouTube, TikTok, dan sumber lain.",
+     "kenapa_viral": "Rilis v0.2.0 pada 1 Juli 2026 serta ketersediaan di 50+ platform agent (Claude Code marketplace, Agent Skills CLI) mendorong hampir 4.400 star baru dalam sepekan."
     }
-  ]
+   ]
+  },
+  {
+   "week_end": "2026-07-09",
+   "label": "3–9 Juli 2026",
+   "summary": "Minggu ini ekosistem agen AI menguasai daftar trending nyaris tanpa sisa — seluruh 10 repo teratas berhubungan dengan AI, dan sebagian besar berputar di sekitar coding agent seperti Claude Code dan Codex. Ada tiga pola besar: pertama, tooling di sekitar Claude Code meledak (plugin Codex resmi dari OpenAI, multiplexer terminal herdr, gateway hemat token OmniRoute, ekstensi video claude-video). Kedua, AI merambah domain spesifik: pentest otomatis (strix), notulen rapat lokal (meetily), sampai melamar kerja (ai-job-search). Ketiga, perusahaan raksasa ikut turun gunung — Meta merilis design system 'agent-ready' astryx dan Alibaba merilis page-agent. Bahasa dominan: TypeScript, Rust, dan Python.",
+   "repos": [
+    {
+     "name": "usestrix/strix",
+     "url": "https://github.com/usestrix/strix",
+     "lang": "Python",
+     "stars_week": 10274,
+     "stars_total": 39475,
+     "desc": "Alat penetration testing berbasis AI open-source untuk menemukan dan memperbaiki kerentanan aplikasi.",
+     "apa": "Agen AI yang melakukan penetration testing otomatis: memindai aplikasi Anda, menemukan celah keamanan, lalu mengusulkan perbaikannya.",
+     "use_case": "Tim keamanan dan developer memakainya untuk menguji aplikasi milik sendiri sebelum dirilis, program bug bounty, dan otomasi red-teaming — tanpa harus menyewa pentester manual untuk setiap rilis.",
+     "kenapa_viral": "Repo dengan bintang mingguan tertinggi (10 ribu+ dalam seminggu). Keamanan aplikasi adalah kekhawatiran nyata di era kode yang makin banyak ditulis AI, dan janji 'pentest otomatis yang sekalian memperbaiki' tepat sasaran. Lisensi Apache-2.0 membuatnya aman diadopsi perusahaan."
+    },
+    {
+     "name": "MadsLorentzen/ai-job-search",
+     "url": "https://github.com/MadsLorentzen/ai-job-search",
+     "lang": "TypeScript",
+     "stars_week": 9677,
+     "stars_total": 17998,
+     "desc": "Framework lamaran kerja bertenaga AI yang dibangun di atas Claude Code.",
+     "apa": "Framework yang mengubah Claude Code menjadi asisten cari kerja: Anda fork reponya, isi profil, lalu Claude mengevaluasi lowongan, menyesuaikan CV, menulis surat lamaran, dan menyiapkan Anda untuk interview.",
+     "use_case": "Pencari kerja (terutama di bidang tech) yang ingin mengotomasi proses lamaran end-to-end: menyaring lowongan yang cocok, membuat CV yang disesuaikan per lowongan, dan latihan interview.",
+     "kenapa_viral": "Model 'fork-to-use' yang unik — 5.200+ fork membuktikan orang benar-benar memakainya, bukan sekadar menyimpan. Topiknya universal (semua orang butuh kerja), dan ini contoh mencolok tren baru: Claude Code dipakai untuk urusan hidup di luar coding."
+    },
+    {
+     "name": "Zackriya-Solutions/meetily",
+     "url": "https://github.com/Zackriya-Solutions/meetily",
+     "lang": "Rust",
+     "stars_week": 8366,
+     "stars_total": 22093,
+     "desc": "Asisten rapat AI yang mengutamakan privasi: transkripsi live, pemisahan pembicara, dan ringkasan — 100% berjalan lokal.",
+     "apa": "Aplikasi notulen rapat otomatis untuk macOS dan Windows: transkripsi langsung dengan Parakeet/Whisper (diklaim 4x lebih cepat), membedakan siapa berbicara apa (speaker diarization), lalu diringkas oleh LLM lokal via Ollama — tanpa cloud sama sekali.",
+     "use_case": "Perusahaan atau individu dengan aturan privasi ketat (hukum, kesehatan, keuangan) yang butuh notulen rapat otomatis tapi tidak boleh mengirim audio rapat ke server pihak ketiga.",
+     "kenapa_viral": "Reaksi balik terhadap notetaker berbasis cloud yang merekam rapat ke server orang lain. Klaim performa konkret (4x lebih cepat) plus stack Rust yang ringan membuatnya menonjol, dan posisinya sebagai 'notetaker self-hosted #1' menarik komunitas privacy-first."
+    },
+    {
+     "name": "asgeirtj/system_prompts_leaks",
+     "url": "https://github.com/asgeirtj/system_prompts_leaks",
+     "lang": "JavaScript",
+     "stars_week": 6182,
+     "stars_total": 54920,
+     "desc": "Kumpulan system prompt hasil ekstraksi dari Claude, ChatGPT, Gemini, Grok, dan lainnya — diperbarui rutin.",
+     "apa": "Arsip system prompt (instruksi internal) berbagai produk AI besar — Claude Fable 5, ChatGPT 5.5, Gemini 3.5, Copilot, Cursor, Perplexity — yang diekstrak dan didokumentasikan komunitas.",
+     "use_case": "Belajar prompt engineering dari cara vendor besar menulis instruksi untuk modelnya sendiri, riset transparansi AI, dan referensi saat membangun agen atau chatbot sendiri.",
+     "kenapa_viral": "Rasa penasaran 'di balik layar' yang tak pernah habis. Repo ini melonjak setiap ada rilis model baru — dan minggu-minggu ini ramai rilis (Claude Fable 5, GPT 5.5), jadi orang berbondong-bondong melihat instruksi internalnya."
+    },
+    {
+     "name": "facebook/astryx",
+     "url": "https://github.com/facebook/astryx",
+     "lang": "TypeScript",
+     "stars_week": 4943,
+     "stars_total": 7405,
+     "desc": "Design system open source dari Meta yang sepenuhnya bisa dikustomisasi dan siap dipakai agen AI.",
+     "apa": "Design system (komponen UI + token desain) dari Meta yang dirancang 'agent ready' — strukturnya dibuat agar mudah dipahami dan dimodifikasi oleh agen AI coding, bukan hanya oleh manusia.",
+     "use_case": "Tim frontend yang membangun aplikasi dengan bantuan AI coding agent: komponennya konsisten dan terdokumentasi sehingga agen bisa merakit UI yang rapi tanpa menghasilkan desain acak-acakan.",
+     "kenapa_viral": "Nama besar Meta (repo baru dibuat Januari 2026, langsung 7 ribu bintang) plus positioning yang pas dengan zeitgeist: semua orang sedang mencari cara agar output UI dari AI tidak berantakan — 'design system untuk era agen' menjawab itu."
+    },
+    {
+     "name": "openai/codex-plugin-cc",
+     "url": "https://github.com/openai/codex-plugin-cc",
+     "lang": "JavaScript",
+     "stars_week": 4890,
+     "stars_total": 27096,
+     "desc": "Plugin resmi OpenAI untuk memakai Codex dari dalam Claude Code.",
+     "apa": "Plugin resmi dari OpenAI yang menghadirkan Codex di dalam Claude Code — Anda bisa menyuruh Codex me-review kode atau mendelegasikan tugas kepadanya tanpa keluar dari sesi Claude Code.",
+     "use_case": "Developer yang memakai Claude Code sebagai 'markas' tapi ingin second opinion atau tenaga tambahan dari model OpenAI: review silang antar-model dan pembagian tugas antar coding agent.",
+     "kenapa_viral": "Keanehan yang menarik perhatian: OpenAI merilis plugin resmi untuk tool milik Anthropic, pesaingnya sendiri. Ini dibaca sebagai pengakuan bahwa Claude Code jadi platform de-facto, dan interoperabilitas antar coding agent adalah topik terpanas 2026."
+    },
+    {
+     "name": "ogulcancelik/herdr",
+     "url": "https://github.com/ogulcancelik/herdr",
+     "lang": "Rust",
+     "stars_week": 4754,
+     "stars_total": 14706,
+     "desc": "Multiplexer agen yang hidup di terminal Anda.",
+     "apa": "Semacam tmux untuk coding agent: satu antarmuka terminal untuk menjalankan, memantau, dan berpindah antara banyak agen (Claude Code, Codex, dll.) yang bekerja paralel di banyak proyek.",
+     "use_case": "Developer yang menjalankan beberapa coding agent sekaligus — misal satu agen memperbaiki bug di repo A sementara agen lain menulis fitur di repo B — dan butuh 'menara kontrol' untuk menggembalakan semuanya.",
+     "kenapa_viral": "Workflow multi-agent berubah dari eksperimen jadi kebiasaan harian pada 2026, dan rasa sakitnya nyata: tab terminal berserakan. Nama yang mudah diingat (herdr = penggembala), dibangun dengan Rust, dan demo TUI yang memuaskan secara visual."
+    },
+    {
+     "name": "diegosouzapw/OmniRoute",
+     "url": "https://github.com/diegosouzapw/OmniRoute",
+     "lang": "TypeScript",
+     "stars_week": 4424,
+     "stars_total": 14172,
+     "desc": "Gateway AI gratis: satu endpoint untuk 231+ provider, dengan kompresi token dan auto-fallback.",
+     "apa": "Gateway/proxy yang menyatukan 231+ provider LLM (50+ di antaranya gratis) di satu endpoint, lalu menghubungkannya ke Claude Code, Codex, Cursor, Cline, dan Copilot — lengkap dengan kompresi token (klaim hemat 15–95%) dan fallback otomatis saat satu provider limit.",
+     "use_case": "Developer yang sering mentok limit atau ingin menekan tagihan AI: saat kuota model utama habis, request otomatis dialihkan ke provider lain sehingga sesi coding tidak pernah terputus.",
+     "kenapa_viral": "Menjawab keluhan paling umum pengguna coding agent: biaya token dan rate limit. Janji 'never stop coding' plus daftar integrasi yang panjang membuatnya gampang dicoba siapa saja."
+    },
+    {
+     "name": "alibaba/page-agent",
+     "url": "https://github.com/alibaba/page-agent",
+     "lang": "TypeScript",
+     "stars_week": 4295,
+     "stars_total": 25431,
+     "desc": "Agen GUI in-page berbasis JavaScript — kendalikan antarmuka web dengan bahasa natural.",
+     "apa": "Library JavaScript dari Alibaba yang disisipkan langsung ke halaman web, lalu pengguna bisa mengendalikan antarmuka situs itu dengan perintah bahasa natural — tanpa ekstensi browser atau driver otomasi.",
+     "use_case": "Pemilik produk web yang ingin menambahkan 'asisten operasional' ke situsnya (misal: 'buatkan laporan penjualan bulan lalu' dan agen mengklik menu-menunya), atau otomasi dan onboarding pengguna di aplikasi web internal.",
+     "kenapa_viral": "Barrier untuk mencoba sangat rendah — cukup satu tag script di halaman, tanpa infrastruktur browser-automation. Didukung nama Alibaba dan demo yang langsung terasa 'ajaib' membuatnya menyebar cepat."
+    },
+    {
+     "name": "bradautomates/claude-video",
+     "url": "https://github.com/bradautomates/claude-video",
+     "lang": "Python",
+     "stars_week": 2903,
+     "stars_total": 6527,
+     "desc": "Memberi Claude kemampuan menonton video apa pun.",
+     "apa": "Ekstensi untuk Claude Code: perintah /watch mengunduh video, mengekstrak frame-frame kunci, mentranskripsi audionya, lalu menyerahkan semuanya ke Claude untuk dianalisis — efektifnya Claude jadi bisa 'menonton' video.",
+     "use_case": "Meringkas rekaman meeting atau kuliah, menganalisis video tutorial tanpa menontonnya penuh, atau menambang informasi dari konten YouTube langsung dari terminal.",
+     "kenapa_viral": "Mengisi celah kemampuan yang belum ada bawaan di Claude: video. Konsepnya satu kalimat, demonya memikat, dan repo baru berumur dua bulan ini menunggangi gelombang besar ekosistem plugin Claude Code."
+    }
+   ]
+  }
+ ]
 }
-]}
 </script>
 
 <script>
