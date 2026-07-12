@@ -33,7 +33,10 @@ Langkah:
 4. **Tulis edisi baru** (bahasa Indonesia semua), skema: week_end, label,
    summary, repos[{name, url, lang, stars_week, stars_total, desc, apa,
    use_case, kenapa_viral}] — kenapa_viral berdasar sinyal nyata, bukan spekulasi.
-   Jika edisi minggu yang sama sudah ada (week_end ±3 hari), GANTI, jangan duplikat.
+   ATURAN ARSIP (ketat): edisi lama TIDAK PERNAH dihapus/diubah. Satu-satunya
+   pengecualian: edisi dengan week_end sama persis atau selisih ≤1 hari boleh
+   DIGANTI (run ulang di minggu sama). Selisih ≥2 hari = edisi berbeda, wajib
+   dipertahankan.
 
 5. **Rakit HTML baru** dari HTML arsip: ganti HANYA isi blok `#data`, edisi baru
    di indeks 0, edisi lama dipertahankan semua. Validasi JSON parse. Tanpa
@@ -45,6 +48,7 @@ Langkah:
 7. **Push ke GitHub (untuk Vercel).** Jalankan `python3 build_index.py`
    (menghasilkan `index.html`), commit `site/trends.html` + `index.html` dengan
    pesan `feat: edisi <label>`, push ke `main` → Vercel auto-deploy. Jika push
-   gagal, jangan gagalkan run — artifact tetap sah, laporkan saja.
+   ke main ditolak, coba branch `weekly-update` dan laporkan. Jika semua push
+   gagal, jangan gagalkan run — artifact tetap sah; laporkan error verbatim.
 
 Aturan: seluruh teks bahasa Indonesia; jika ragu menimpa — jangan menimpa.
