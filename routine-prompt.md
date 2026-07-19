@@ -33,6 +33,9 @@ Langkah:
 4. **Tulis edisi baru** (bahasa Indonesia semua), skema: week_end, label,
    summary, repos[{name, url, lang, stars_week, stars_total, desc, apa,
    use_case, kenapa_viral}] — kenapa_viral berdasar sinyal nyata, bukan spekulasi.
+   Di summary, sebut singkat perubahan vs edisi sebelumnya (repo baru, siapa
+   bertahan/naik). Status per repo TIDAK ditulis ke JSON — halaman web
+   menghitung badge BARU / N mgg sendiri dari arsip.
    ATURAN ARSIP (ketat): edisi lama TIDAK PERNAH dihapus/diubah. Satu-satunya
    pengecualian: edisi dengan week_end sama persis atau selisih ≤1 hari boleh
    DIGANTI (run ulang di minggu sama). Selisih ≥2 hari = edisi berbeda, wajib
