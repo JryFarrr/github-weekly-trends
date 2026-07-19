@@ -176,6 +176,17 @@
     background: var(--muted);
     margin-right: 0.3em;
   }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.05rem 0.5rem;
+    white-space: nowrap;
+  }
+  .badge-new { color: var(--accent); border-color: #3fb9508c; }
   .stars {
     font-family: var(--mono);
     font-variant-numeric: tabular-nums;
@@ -259,6 +270,123 @@
 <script type="application/json" id="data">
 {
  "editions": [
+  {
+   "week_end": "2026-07-18",
+   "label": "13–19 Juli 2026",
+   "summary": "Minggu ini trending GitHub sangat didominasi ekosistem \"agent skill\" untuk coding assistant — hallmark, mattpocock/skills, OfficeCLI, dan cangjie-skill sama-sama menawarkan skill siap pakai untuk Claude Code, Cursor, dan Codex, tanda developer kini membangun semacam \"app store\" skill di sekitar coding agent. Tim riset HKUDS tampil dua kali sekaligus lewat Vibe-Trading dan DeepTutor, menunjukkan pola agent untuk domain spesifik (trading, edukasi) makin populer. Server MCP DesktopCommanderMCP dan coding agent CLI openai/codex melengkapi gambaran bahwa infrastruktur dan endpoint untuk AI agent masih jadi topik terpanas. Di luar gelombang agent, OpenCut mencuri perhatian sebagai alternatif open-source CapCut yang sedang menjalani redesain arsitektur besar-besaran.",
+   "repos": [
+    {
+     "name": "Nutlope/hallmark",
+     "url": "https://github.com/Nutlope/hallmark",
+     "lang": "CSS",
+     "stars_week": 8075,
+     "stars_total": 12702,
+     "desc": "Skill desain \"anti-AI-slop\" untuk Claude Code, Cursor, dan Codex.",
+     "apa": "Skill desain yang membantu coding agent menghasilkan UI yang tidak generik, dengan 20 tema dan 57 \"slop-test gate\" pemeriksa kualitas desain.",
+     "use_case": "Dipasang lewat `npx skills add nutlope/hallmark` oleh developer yang memakai coding agent, untuk empat mode kerja: membangun UI baru, mengaudit, meredesain, atau mempelajari pola desain yang sudah ada.",
+     "kenapa_viral": "Melonjak 8.075 star hanya dalam seminggu, didorong tren skill/plugin untuk coding agent (Claude Code, Cursor, Codex) yang sedang naik daun serta keluhan luas soal \"AI slop\" pada UI hasil generate AI."
+    },
+    {
+     "name": "OpenCut-app/OpenCut",
+     "url": "https://github.com/OpenCut-app/OpenCut",
+     "lang": "TypeScript",
+     "stars_week": 12718,
+     "stars_total": 75314,
+     "desc": "Editor video open-source untuk web, desktop, dan mobile, alternatif gratis dari CapCut.",
+     "apa": "Editor video open-source lintas platform yang diposisikan sebagai pengganti gratis untuk CapCut.",
+     "use_case": "Dipakai kreator konten dan editor video yang ingin alat edit video yang kuat tanpa berlangganan software berbayar.",
+     "kenapa_viral": "Bertambah 12.718 star dalam seminggu, tertinggi di daftar ini, didorong redesain arsitektur besar-besaran (dukungan plugin, backend Rust lintas platform) yang sedang berjalan dan menarik perhatian komunitas video editing open-source."
+    },
+    {
+     "name": "Shubhamsaboo/awesome-llm-apps",
+     "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+     "lang": "Python",
+     "stars_week": 6252,
+     "stars_total": 123920,
+     "desc": "Kumpulan 100+ aplikasi AI agent dan RAG open-source yang siap dipakai.",
+     "apa": "Koleksi lebih dari 100 contoh aplikasi AI agent dan RAG open-source yang bisa langsung di-clone dan dijalankan.",
+     "use_case": "Dipakai developer AI sebagai starter kit untuk membangun agent, dari yang sederhana hingga sistem multi-agent dan voice agent, mendukung berbagai LLM seperti Claude, Gemini, GPT, dan DeepSeek.",
+     "kenapa_viral": "Bertambah 6.252 star minggu ini, konsisten dengan tren jangka panjang repo koleksi \"awesome list\" AI agent yang terus dicari developer sebagai titik awal proyek LLM."
+    },
+    {
+     "name": "HKUDS/Vibe-Trading",
+     "url": "https://github.com/HKUDS/Vibe-Trading",
+     "lang": "Python",
+     "stars_week": 5616,
+     "stars_total": 24911,
+     "desc": "Platform riset trading berbasis AI yang mengubah query bahasa natural menjadi strategi yang sudah di-backtest.",
+     "apa": "Platform riset trading open-source yang mengubah permintaan bahasa natural menjadi strategi trading, analisis pasar, dan backtest lintas kelas aset.",
+     "use_case": "Dipakai trader dan quant untuk riset pasar otomatis, backtesting lintas aset (saham, kripto, futures, forex), serta menganalisis riwayat transaksi broker sendiri lewat fitur \"Shadow Account\".",
+     "kenapa_viral": "Naik 5.616 star dalam seminggu, didorong rilis yang aktif (778 commit di main, rilis berkelanjutan sejak April 2026) dan tren \"vibe coding\" yang meluas ke domain trading dengan dukungan 13+ provider LLM."
+    },
+    {
+     "name": "HKUDS/DeepTutor",
+     "url": "https://github.com/HKUDS/DeepTutor",
+     "lang": "Python",
+     "stars_week": 1801,
+     "stars_total": 27610,
+     "desc": "Workspace belajar berbasis AI agent untuk tutoring personal seumur hidup.",
+     "apa": "Workspace belajar berbasis AI agent yang menggabungkan tutoring, pemecahan soal, pembuatan kuis, riset, dan visualisasi dalam satu runtime.",
+     "use_case": "Dipakai pelajar atau siapa pun yang ingin tutor personal berkelanjutan, dengan basis pengetahuan multi-engine (LlamaIndex, GraphRAG, dan lainnya) serta sistem memori tiga lapis.",
+     "kenapa_viral": "Bertambah 1.801 star, didukung rilis terbaru v1.5.1 pada 9 Juli 2026 dan posisinya sebagai proyek saudara dari Vibe-Trading, sama-sama dari tim HKUDS yang sedang naik daun."
+    },
+    {
+     "name": "iOfficeAI/OfficeCLI",
+     "url": "https://github.com/iOfficeAI/OfficeCLI",
+     "lang": "C#",
+     "stars_week": 4611,
+     "stars_total": 19202,
+     "desc": "Office suite berbentuk CLI yang dirancang untuk AI agent membaca dan mengedit file Word, Excel, PowerPoint.",
+     "apa": "Office suite berbasis command-line yang dirancang khusus agar AI agent bisa membaca, mengedit, dan mengotomasi file Word, Excel, dan PowerPoint.",
+     "use_case": "Dipakai developer yang membangun automasi dokumen kantor lewat AI agent (Claude Code, Codex), berupa binary tunggal tanpa perlu instalasi Office, lengkap dengan evaluasi formula Excel dan dukungan MCP server.",
+     "kenapa_viral": "Melonjak 4.611 star, didorong rilis yang aktif (v1.0.138 pada 17 Juli 2026) dan integrasi langsung ke ekosistem skill Claude Code serta Codex yang sedang tren."
+    },
+    {
+     "name": "mattpocock/skills",
+     "url": "https://github.com/mattpocock/skills",
+     "lang": "Shell",
+     "stars_week": 11325,
+     "stars_total": 176355,
+     "desc": "Koleksi agent skill pribadi Matt Pocock untuk workflow coding berbasis AI.",
+     "apa": "Koleksi \"agent skill\" siap pakai dari direktori pribadi Matt Pocock untuk meningkatkan workflow coding berbasis AI agent.",
+     "use_case": "Dipakai software engineer yang ingin memasang skill seperti /tdd, /implement, dan /grill-with-docs ke coding agent mereka lewat installer skills.sh atau sebagai plugin Claude Code.",
+     "kenapa_viral": "Bertambah 11.325 star dalam seminggu, dengan total star tertinggi (176k) di daftar ini, mencerminkan ledakan minat pada ekosistem \"agent skill\" yang makin populer lewat integrasi resmi Claude Code."
+    },
+    {
+     "name": "kangarooking/cangjie-skill",
+     "url": "https://github.com/kangarooking/cangjie-skill",
+     "lang": "Python",
+     "stars_week": 1158,
+     "stars_total": 3639,
+     "desc": "Sistem yang menyuling konten bernilai tinggi menjadi skill AI agent yang bisa dieksekusi.",
+     "apa": "Sistem yang menyuling konten bernilai tinggi (buku, video panjang, podcast) menjadi skill AI agent yang bisa dieksekusi, memakai metodologi RIA-TV++.",
+     "use_case": "Dipakai pembuat skill/agent untuk mengubah pengetahuan dari sumber seperti surat Warren Buffett atau buku copywriting menjadi skill terstruktur lewat pipeline tujuh tahap.",
+     "kenapa_viral": "Naik 1.158 star sebagai repo termuda dan terkecil di daftar ini (3,6k total star), terdorong tren yang sama soal skill generator untuk coding agent, plus posisinya dalam ekosistem skill lain seperti nuwa-skill dan darwin-skill."
+    },
+    {
+     "name": "wonderwhy-er/DesktopCommanderMCP",
+     "url": "https://github.com/wonderwhy-er/DesktopCommanderMCP",
+     "lang": "TypeScript",
+     "stars_week": 1657,
+     "stars_total": 8491,
+     "desc": "Server MCP yang memberi Claude dan asisten AI lain akses ke terminal dan sistem file.",
+     "apa": "Server MCP yang memberi Claude dan asisten AI lain akses ke kontrol terminal, operasi sistem file, dan edit kode di luar IDE.",
+     "use_case": "Dipakai developer yang ingin AI assistant (Claude, ChatGPT, Gemini CLI) bisa mengontrol seluruh sistem operasi mereka, termasuk membuka file Excel/PDF dan mengelola proses.",
+     "kenapa_viral": "Bertambah 1.657 star, konsisten dengan tren berkelanjutan adopsi server MCP sebagai cara standar menghubungkan AI assistant ke tool lokal."
+    },
+    {
+     "name": "openai/codex",
+     "url": "https://github.com/openai/codex",
+     "lang": "Rust",
+     "stars_week": 2250,
+     "stars_total": 99348,
+     "desc": "Coding agent ringan buatan OpenAI yang berjalan langsung di terminal.",
+     "apa": "Coding agent ringan buatan OpenAI yang berjalan langsung di terminal, tersedia untuk Mac, Linux, dan Windows.",
+     "use_case": "Dipakai developer untuk coding assistance berbasis command-line, terintegrasi dengan paket ChatGPT (Plus, Pro, Business, Enterprise).",
+     "kenapa_viral": "Bertambah 2.250 star, sebagai salah satu coding agent CLI utama dari vendor besar, momentum ini konsisten dengan minat besar yang berkelanjutan pada tooling CLI-based agentic coding."
+    }
+   ]
+  },
   {
    "week_end": "2026-07-12",
    "label": "6–12 Juli 2026",
@@ -524,6 +652,23 @@
     document.getElementById("hero-sub").textContent = "Edisi " + ed.label;
     document.getElementById("ringkasan").textContent = ed.summary;
 
+    /* konteks antar-minggu: bandingkan dengan edisi sebelumnya di arsip */
+    const prev = DATA.editions[edIdx + 1];
+    const prevRank = prev ? Object.fromEntries(prev.repos.map((r, j) => [r.name, j])) : null;
+    const streak = name => {
+      let n = 1;
+      for (let j = edIdx + 1; j < DATA.editions.length &&
+           DATA.editions[j].repos.some(r => r.name === name); j++) n++;
+      return n;
+    };
+    const badge = (name, i) => {
+      if (!prevRank) return ""; /* edisi tertua: tak ada pembanding */
+      if (!(name in prevRank)) return '<span class="badge badge-new">BARU</span>';
+      const d = prevRank[name] - i;
+      const arr = d > 0 ? " ▲" + d : d < 0 ? " ▼" + (-d) : "";
+      return `<span class="badge">${streak(name)} mgg${arr}</span>`;
+    };
+
     const langs = [...new Set(ed.repos.map(r => r.lang))];
     document.getElementById("filter").innerHTML =
       [`<button aria-pressed="${langFilter === "*"}" data-lang="*">Semua (${ed.repos.length})</button>`]
@@ -543,6 +688,7 @@
             <span class="rank">#${i + 1}</span>
             <span class="repo"><span class="owner">${esc(owner)}/</span>${esc(repo)}</span>
             <span class="lang"><span class="dot" style="background:${dot}"></span>${esc(r.lang)}</span>
+            ${badge(r.name, i)}
             <span class="stars">+${fmt(r.stars_week)} ★ minggu ini</span>
           </summary>
           <div class="body">
