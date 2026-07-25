@@ -278,6 +278,123 @@
 {
  "editions": [
   {
+   "week_end": "2026-07-25",
+   "label": "19–25 Juli 2026",
+   "summary": "Minggu ini seluruh 10 repo teratas adalah pendatang baru — tak satu pun bertahan dari edisi 13–19 Juli, tanda pergeseran tren yang sangat cepat. Tema terbesar adalah perlombaan agent harness/CLI untuk coding: jcode, kimi-code, kimi-cli, serta duo pi/pi-web sama-sama berebut jadi \"terminal AI agent\" andalan developer, sementara code-review-graph menyerang masalah pemborosan token dengan knowledge graph kode. Di lapisan infrastruktur, OmniRoute (gateway 290+ provider LLM) dan worldmonitor (dashboard intelijen global berbasis AI) menunjukkan makin banyak proyek dibangun di atas LLM sebagai lapisan dasar, sedangkan ai-agent-book dan ai-engineering-from-scratch mencerminkan lonjakan minat belajar AI engineering dari nol.",
+   "repos": [
+    {
+     "name": "bojieli/ai-agent-book",
+     "url": "https://github.com/bojieli/ai-agent-book",
+     "lang": "Python",
+     "stars_week": 17401,
+     "stars_total": 19675,
+     "desc": "Buku open-source \"Memahami AI Agent Secara Mendalam\": prinsip desain dan praktik rekayasa.",
+     "apa": "Buku teks terbuka tentang AI agent dengan rumus inti \"Agent = LLM + Context + Tools\", lengkap 10 bab dan 92 proyek praktik yang bisa langsung dijalankan.",
+     "use_case": "Dipakai developer dan mahasiswa untuk belajar membangun AI agent dari nol — context engineering, memori, tools, evaluasi, hingga multi-agent — tersedia dalam 7 bahasa dengan PDF/EPUB gratis.",
+     "kenapa_viral": "Melonjak ke 19,7k star dengan 17,4k di antaranya datang dalam seminggu — didorong sebaran luas di komunitas AI berbahasa Mandarin dan cakupan topik populer seperti mcp, rag, dan multi-agent."
+    },
+    {
+     "name": "koala73/worldmonitor",
+     "url": "https://github.com/koala73/worldmonitor",
+     "lang": "TypeScript",
+     "stars_week": 10936,
+     "stars_total": 74000,
+     "desc": "Dashboard intelijen global real-time dengan agregasi berita berbasis AI dan pemantauan geopolitik.",
+     "apa": "Dashboard situational awareness yang mengagregasi 500+ feed berita lewat AI, dengan globe 3D/peta WebGL dan skor Country Instability Index untuk 31 negara.",
+     "use_case": "Dipakai analis OSINT, jurnalis, dan peneliti geopolitik untuk memvisualisasikan peristiwa dunia, dengan mode AI lokal via Ollama sehingga tidak perlu API key.",
+     "kenapa_viral": "Total 74k star dengan 10,9k star baru minggu ini — tampilan visual bergaya \"Palantir\" yang mencolok plus dukungan aplikasi desktop lintas platform (Tauri) membuatnya banyak dibagikan."
+    },
+    {
+     "name": "tirth8205/code-review-graph",
+     "url": "https://github.com/tirth8205/code-review-graph",
+     "lang": "Python",
+     "stars_week": 6565,
+     "stars_total": 26357,
+     "desc": "Graph intelijen kode lokal untuk MCP dan CLI yang membangun peta basis kode persisten.",
+     "apa": "Sistem code intelligence lokal yang memakai Tree-sitter untuk membangun knowledge graph basis kode, sehingga AI coding assistant hanya membaca file yang relevan secara kontekstual.",
+     "use_case": "Dipakai tim engineering untuk mempercepat code review dan pekerjaan di repo besar bersama Claude Code, Cursor, Windsurf, dan Copilot — mengklaim penghematan token 38x-528x.",
+     "kenapa_viral": "26,4k star dengan 6,6k di antaranya minggu ini — menjawab langsung keluhan umum \"AI coding assistant boros token\", didukung integrasi ke banyak tool populer lewat MCP."
+    },
+    {
+     "name": "1jehuang/jcode",
+     "url": "https://github.com/1jehuang/jcode",
+     "lang": "Rust",
+     "stars_week": 2773,
+     "stars_total": 11393,
+     "desc": "Agent harness paling cerdas untuk coding.",
+     "apa": "Agent harness coding generasi baru berbasis Rust, dirancang untuk workflow multi-sesi, kustomisasi tinggi, dan performa tinggi.",
+     "use_case": "Dipakai developer sebagai alternatif Claude Code atau Codex CLI, dengan swarm mode multi-agent dan dukungan banyak provider LLM sekaligus.",
+     "kenapa_viral": "11,4k star, 2,8k di antaranya minggu ini — diklaim jauh lebih ringan (RAM dan waktu startup) dibanding kompetitor, menonjol di tengah persaingan ketat coding-agent CLI."
+    },
+    {
+     "name": "agegr/pi-web",
+     "url": "https://github.com/agegr/pi-web",
+     "lang": "TypeScript",
+     "stars_week": 1316,
+     "stars_total": 2717,
+     "desc": "Web UI untuk coding agent pi.",
+     "apa": "Antarmuka web lokal untuk coding agent \"pi\" yang menyediakan chat real-time, file explorer, dan manajemen sesi lewat browser.",
+     "use_case": "Dipakai pengguna pi coding agent yang menginginkan antarmuka visual (bukan terminal) untuk menelusuri sesi lama, mem-fork percakapan, dan mengatur skill/model.",
+     "kenapa_viral": "2,7k star dengan 1,3k minggu ini — mengikuti momentum ekosistem \"pi\" (earendil-works/pi) yang juga trending bersamaan, menunjukkan permintaan UI web untuk coding agent CLI."
+    },
+    {
+     "name": "diegosouzapw/OmniRoute",
+     "url": "https://github.com/diegosouzapw/OmniRoute",
+     "lang": "TypeScript",
+     "stars_week": 9965,
+     "stars_total": 29755,
+     "desc": "AI gateway gratis mendukung 290+ provider dan 500+ model dengan auto-fallback dan kompresi token.",
+     "apa": "AI gateway open-source yang merutekan permintaan ke 290+ provider dan 500+ model LLM dengan fallback otomatis serta kompresi token hingga 95%.",
+     "use_case": "Dipakai developer untuk menghemat biaya API LLM dan menghindari downtime provider — kompatibel dengan Claude Code, Cursor, dan Cline lewat endpoint OpenAI-compatible.",
+     "kenapa_viral": "29,8k star, hampir 10k di antaranya minggu ini — janji \"zero-config, tanpa API key\" dan sekitar 1,53 miliar token gratis per bulan membuatnya viral di kalangan yang mencari cara hemat biaya AI."
+    },
+    {
+     "name": "MoonshotAI/kimi-code",
+     "url": "https://github.com/MoonshotAI/kimi-code",
+     "lang": "TypeScript",
+     "stars_week": 1589,
+     "stars_total": 5029,
+     "desc": "Kimi Code CLI — titik awal agent generasi berikutnya.",
+     "apa": "CLI agent coding generasi berikut dari Moonshot AI, penerus resmi kimi-cli, dengan distribusi single-binary dan startup dalam hitungan milidetik.",
+     "use_case": "Dipakai developer sebagai coding agent terminal yang terhubung ke model Kimi untuk mengedit kode, menjalankan shell, hingga menerima input video.",
+     "kenapa_viral": "5k star dengan 1,6k minggu ini — sebagai suksesor resmi kimi-cli, repo ini mendorong migrasi pengguna lama sekaligus menarik perhatian baru ke ekosistem Kimi."
+    },
+    {
+     "name": "earendil-works/pi",
+     "url": "https://github.com/earendil-works/pi",
+     "lang": "TypeScript",
+     "stars_week": 4880,
+     "stars_total": 77474,
+     "desc": "Toolkit AI agent dengan API LLM terpadu, agent loop, TUI, dan CLI coding agent.",
+     "apa": "Toolkit agent AI modular yang menyatukan API multi-provider LLM (pi-ai), runtime agent dengan tool calling (pi-agent-core), library TUI (pi-tui), dan CLI coding agent interaktif.",
+     "use_case": "Dipakai developer yang ingin membangun atau menjalankan coding agent sendiri di banyak provider (OpenAI, Anthropic, Google, dll) dengan komponen yang bisa dipakai terpisah.",
+     "kenapa_viral": "77,5k star dengan hampir 4,9k minggu ini — jadi fondasi ekosistem \"pi\" (termasuk pi-web yang juga trending) dan menonjolkan praktik keamanan rantai pasok yang ketat."
+    },
+    {
+     "name": "MoonshotAI/kimi-cli",
+     "url": "https://github.com/MoonshotAI/kimi-cli",
+     "lang": "Python",
+     "stars_week": 1570,
+     "stars_total": 10824,
+     "desc": "Kimi CLI berfungsi sebagai CLI agent generasi berikutmu.",
+     "apa": "CLI agent coding generasi awal dari Moonshot AI yang kini mulai ditransisikan ke Kimi Code CLI sebagai penerus resminya.",
+     "use_case": "Masih dipakai luas untuk operasi terminal dan pengeditan kode berbasis model Kimi, dengan integrasi VS Code, MCP, dan plugin Zsh.",
+     "kenapa_viral": "10,8k star, 1,6k minggu ini — trending berbarengan dengan kimi-code menandakan gelombang perhatian besar ke seluruh lini produk CLI Moonshot AI."
+    },
+    {
+     "name": "rohitg00/ai-engineering-from-scratch",
+     "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+     "lang": "Python",
+     "stars_week": 4399,
+     "stars_total": 43404,
+     "desc": "Sumber belajar yang mengajarkan fondasi dan implementasi praktis AI engineering.",
+     "apa": "Kurikulum open-source berisi 503 pelajaran dalam 20 fase, dari fondasi matematika hingga deployment produksi.",
+     "use_case": "Dipakai pembelajar mandiri untuk menguasai ML, LLM, computer vision, hingga infrastruktur produksi lewat implementasi Python/TypeScript/Rust/Julia tanpa perlu cloud.",
+     "kenapa_viral": "43,4k star dengan 4,4k minggu ini — dibuat oleh pembuat proyek \"Agent Memory\" yang sudah punya basis pengikut, menjawab tren besar \"belajar AI engineering dari nol\"."
+    }
+   ]
+  },
+  {
    "week_end": "2026-07-18",
    "label": "13–19 Juli 2026",
    "summary": "Minggu ini trending GitHub sangat didominasi ekosistem \"agent skill\" untuk coding assistant — hallmark, mattpocock/skills, OfficeCLI, dan cangjie-skill sama-sama menawarkan skill siap pakai untuk Claude Code, Cursor, dan Codex, tanda developer kini membangun semacam \"app store\" skill di sekitar coding agent. Tim riset HKUDS tampil dua kali sekaligus lewat Vibe-Trading dan DeepTutor, menunjukkan pola agent untuk domain spesifik (trading, edukasi) makin populer. Server MCP DesktopCommanderMCP dan coding agent CLI openai/codex melengkapi gambaran bahwa infrastruktur dan endpoint untuk AI agent masih jadi topik terpanas. Di luar gelombang agent, OpenCut mencuri perhatian sebagai alternatif open-source CapCut yang sedang menjalani redesain arsitektur besar-besaran.",
