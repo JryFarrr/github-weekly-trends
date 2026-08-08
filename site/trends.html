@@ -270,6 +270,123 @@
 <script type="application/json" id="data">{
   "editions": [
     {
+      "week_end": "2026-08-08",
+      "label": "2–8 Agustus 2026",
+      "summary": "Minggu ini trending GitHub diramaikan tooling agen AI lintas kebutuhan: dari memori tim untuk AI agent (TencentDB Agent Memory), coding agent berbasis DeepSeek (Reasonix), hingga alternatif open-source untuk Claude Cowork (openwork) dan orkestrator multi-agent berbasis tmux (SwarmForge) — berdampingan dengan proyek lama yang kembali naik daun seperti AirLLM dan kurikulum AI-For-Beginners dari Microsoft. Dari 10 repo, 9 adalah wajah baru dibanding edisi 26 Juli–1 Agustus, sementara hanya book-to-skill yang bertahan dua minggu berturut-turut. Lonjakan star tertinggi dipegang skill router keamanan reverse-skill (10.400 star dalam sepekan) yang mencerminkan minat tinggi pada tooling AI untuk reverse engineering dan CTF, meski riwayat commit-nya masih sangat tipis untuk ukuran repo sebesar itu.",
+      "repos": [
+        {
+          "name": "zhaoxuya520/reverse-skill",
+          "url": "https://github.com/zhaoxuya520/reverse-skill",
+          "lang": "PowerShell",
+          "stars_week": 10400,
+          "stars_total": 21026,
+          "desc": "Paket skill router untuk reverse engineering, penetration testing berizin, dan riset keamanan, dengan routing bertenaga AI.",
+          "apa": "Sebuah sistem routing yang mengarahkan agen AI (Claude Code, Cursor, Cline) ke metodologi dan tool yang tepat saat menghadapi tugas keamanan seperti dekompilasi APK, analisis biner, dekripsi JavaScript, atau tantangan CTF — lengkap dengan 41 aturan routing yang divalidasi lewat 163 test case.",
+          "use_case": "Dipakai peneliti keamanan, peserta CTF, dan tim red-team berizin yang ingin agen AI mereka otomatis memilih tool dan alur kerja yang sesuai, lengkap dengan manajemen kasus dan pelacakan bukti.",
+          "kenapa_viral": "Momentum besar dari tren skill pack untuk AI coding agent, tapi patut dicatat: lonjakan 10.400 star dalam sepekan ini terjadi pada repo dengan riwayat baru sekitar 3 commit di branch utama — rasio star-terhadap-aktivitas yang jauh di luar kebiasaan sehingga layak disikapi dengan kehati-hatian."
+        },
+        {
+          "name": "TencentCloud/TencentDB-Agent-Memory",
+          "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+          "lang": "TypeScript",
+          "stars_week": 7501,
+          "stars_total": 18099,
+          "desc": "Hub memori tingkat tim untuk AI Agent yang mengubah percakapan, dokumen, dan kode menjadi aset memori yang bisa dipakai ulang.",
+          "apa": "Platform dari Tencent Cloud yang mengekstrak percakapan, dokumentasi, dan basis kode menjadi empat jenis aset memori (Chat Memory, Skill, LLM-Wiki, Code-Graph) yang bisa dibagikan lintas agen dan framework dengan kontrol akses tim.",
+          "use_case": "Cocok untuk tim engineering yang menjalankan banyak AI agent dan ingin agen-agen itu berbagi konteks proyek tanpa perlu diperkenalkan ulang tiap sesi — mendukung deployment satu perintah lewat start-all.sh.",
+          "kenapa_viral": "Didukung nama besar Tencent Cloud dan menjawab masalah nyata di ekosistem AI-agent — hilangnya memori antar-sesi — terlihat dari topik seperti long-term-memory dan vector-search yang sedang jadi perhatian komunitas agent-AI."
+        },
+        {
+          "name": "lyogavin/airllm",
+          "url": "https://github.com/lyogavin/airllm",
+          "lang": "Jupyter Notebook",
+          "stars_week": 5521,
+          "stars_total": 30091,
+          "desc": "Inferensi model 70B hanya dengan GPU 4GB tunggal, tanpa kuantisasi, distilasi, atau pruning.",
+          "apa": "AirLLM secara drastis menekan kebutuhan memori inferensi dengan memproses model besar layer-demi-layer, bukan memuat seluruh arsitektur sekaligus, sehingga model raksasa bisa jalan di hardware konsumen.",
+          "use_case": "Dipakai peneliti dan hobiis yang ingin mencoba model bahasa besar (LLM) di laptop atau GPU murah tanpa akses cluster mahal.",
+          "kenapa_viral": "Proyek lama (sudah puluhan ribu star) yang kembali melonjak 5.521 star dalam sepekan — kemungkinan terdorong pembahasan ulang seputar efisiensi inferensi LLM di tengah makin populernya model-model berukuran besar."
+        },
+        {
+          "name": "microsoft/AI-For-Beginners",
+          "url": "https://github.com/microsoft/AI-For-Beginners",
+          "lang": "Jupyter Notebook",
+          "stars_week": 8224,
+          "stars_total": 63510,
+          "desc": "Kurikulum 12 minggu, 24 pelajaran untuk belajar AI dari dasar.",
+          "apa": "Kurikulum resmi Microsoft yang mengajarkan dasar-dasar kecerdasan buatan — machine learning, deep learning, NLP, computer vision — lewat pelajaran praktis, kuis, dan lab menggunakan TensorFlow dan PyTorch.",
+          "use_case": "Dipakai pelajar, bootcamp, dan pengajar sebagai materi belajar AI terstruktur dan gratis, dari nol hingga proyek praktis.",
+          "kenapa_viral": "Repo edukasi Microsoft yang sudah mapan (1.246+ commit, 12,3 ribu fork) ini kembali ramai dibagikan, sejalan dengan tren belajar AI dari nol yang terus tinggi di kalangan pemula sepanjang 2026."
+        },
+        {
+          "name": "esengine/DeepSeek-Reasonix",
+          "url": "https://github.com/esengine/DeepSeek-Reasonix",
+          "lang": "Go",
+          "stars_week": 4739,
+          "stars_total": 33083,
+          "desc": "Coding agent native DeepSeek untuk terminal, dirancang seputar stabilitas prefix-cache.",
+          "apa": "Reasonix adalah asisten coding open-source berbentuk satu binary Go yang bisa dijalankan terus-menerus (\"leave it running\"), dengan arsitektur berbasis konfigurasi, dukungan multi-model, dan ekstensibilitas plugin lewat MCP server.",
+          "use_case": "Dipakai developer yang ingin coding agent berbasis DeepSeek yang stabil dan hemat biaya token lewat optimasi prefix-cache, langsung dari terminal.",
+          "kenapa_viral": "Bagian dari gelombang coding agent alternatif di luar produk closed-source, dengan lebih dari 4.700 commit yang menunjukkan pengembangan sangat aktif dan fokus khusus pada efisiensi biaya inferensi DeepSeek."
+        },
+        {
+          "name": "usekaneo/kaneo",
+          "url": "https://github.com/usekaneo/kaneo",
+          "lang": "TypeScript",
+          "stars_week": 2925,
+          "stars_total": 7695,
+          "desc": "Software manajemen proyek open-source yang minimalis — semua yang dibutuhkan, tanpa yang tidak perlu.",
+          "apa": "Kaneo adalah platform manajemen proyek self-hosted bergaya Jira/Linear dengan kanban board dan issue tracker, dibangun di atas Hono dan React dengan filosofi anti-bloat.",
+          "use_case": "Dipakai tim kecil dan startup yang ingin alternatif self-hosted untuk Jira atau Linear tanpa biaya lisensi dan tanpa fitur berlebihan.",
+          "kenapa_viral": "Topik seperti jira-alternative dan linear-alternative menunjukkan repo ini menangkap frustrasi umum terhadap tool manajemen proyek yang dianggap terlalu rumit, didukung status hacktoberfest-friendly yang menarik kontributor baru."
+        },
+        {
+          "name": "virgiliojr94/book-to-skill",
+          "url": "https://github.com/virgiliojr94/book-to-skill",
+          "lang": "Python",
+          "stars_week": 3957,
+          "stars_total": 18759,
+          "desc": "Mengubah buku teknis dalam format PDF menjadi skill Claude Code untuk belajar dan referensi.",
+          "apa": "Tool yang menstrukturkan buku dan dokumen teknis menjadi file skill per-bab yang bisa dipakai on-demand oleh AI coding agent (Claude Code, GitHub Copilot CLI, Amp) tanpa perlu memuat seluruh buku ke context window.",
+          "use_case": "Dipakai developer yang ingin coding agent mereka bisa merujuk buku referensi teknis secara akurat tanpa halusinasi, dengan klaim hemat token 24x–51x dibanding memuat buku utuh.",
+          "kenapa_viral": "Bertahan untuk minggu kedua berturut-turut di daftar trending, menandakan minat berkelanjutan pada tooling skill-building untuk AI coding agent yang terus tumbuh sejak diluncurkan."
+        },
+        {
+          "name": "iv-org/invidious",
+          "url": "https://github.com/iv-org/invidious",
+          "lang": "Crystal",
+          "stars_week": 1225,
+          "stars_total": 22457,
+          "desc": "Front-end alternatif open-source untuk YouTube.",
+          "apa": "Invidious adalah web front-end alternatif untuk YouTube yang ringan, tanpa iklan, dan tanpa pelacakan, bisa di-hosting sendiri atau memakai instance publik.",
+          "use_case": "Dipakai pengguna yang peduli privasi dan ingin menonton YouTube tanpa iklan, tracking, atau perlu akun Google.",
+          "kenapa_viral": "Proyek mapan (hampir 6.000 commit) yang terus mendapat perhatian stabil seiring meningkatnya kekhawatiran privasi dan kebijakan iklan YouTube yang makin agresif."
+        },
+        {
+          "name": "different-ai/openwork",
+          "url": "https://github.com/different-ai/openwork",
+          "lang": "TypeScript",
+          "stars_week": 2367,
+          "stars_total": 21553,
+          "desc": "Aplikasi desktop open-source gratis untuk berbagi workflow AI, alternatif open-source untuk Claude Cowork dan Codex.",
+          "apa": "OpenWork adalah aplikasi desktop lintas platform (macOS, Windows, Linux) sekaligus MCP server yang memungkinkan pembagian workflow dan kemampuan AI lintas tool seperti Claude Code, Cursor, dan Codex.",
+          "use_case": "Dipakai tim yang ingin membagikan workflow AI antar anggota dan antar tool tanpa terkunci pada satu produk closed-source.",
+          "kenapa_viral": "Memposisikan diri langsung sebagai alternatif open-source untuk produk populer (Claude Cowork), dengan 4.200+ commit yang menunjukkan pengembangan aktif di tengah meningkatnya minat pada workflow AI yang portable antar-tool."
+        },
+        {
+          "name": "unclebob/swarm-forge",
+          "url": "https://github.com/unclebob/swarm-forge",
+          "lang": "Clojure",
+          "stars_week": 273,
+          "stars_total": 1964,
+          "desc": "Tool sederhana untuk mengoordinasikan beberapa AI agent sekaligus.",
+          "apa": "SwarmForge adalah platform orkestrasi agent berbasis tmux yang disiplin, mengubah kumpulan AI agent menjadi tim software engineer yang bekerja lewat topologi berbasis konfigurasi dan aturan konstitusional berlapis.",
+          "use_case": "Dipakai developer yang ingin menjalankan banyak AI coding agent secara paralel dan terkoordinasi pada satu proyek, dengan peran per-proyek yang jelas.",
+          "kenapa_viral": "Ditulis oleh Robert C. Martin alias 'Uncle Bob', figur terkenal di dunia software engineering (penulis Clean Code) — nama besar penulis mendorong perhatian cepat meski repo masih relatif baru dan kecil dibanding entri lain minggu ini."
+        }
+      ]
+    },
+    {
       "week_end": "2026-08-01",
       "label": "26 Juli–1 Agustus 2026",
       "summary": "Minggu ini didominasi oleh tooling seputar agen AI dan coding assistant — dari platform kolaborasi manusia-agen (Buzz), browser automation untuk agent (ego-lite), hingga code review berbasis LLM (Alibaba) dan skill Claude Code (book-to-skill, i-have-adhd) — berdampingan dengan aplikasi privasi seperti BitChat dan companion AI AIRI yang mencatat total star tertinggi. Dari 10 repo trending, 9 di antaranya adalah wajah baru dibanding edisi 19–25 Juli, sementara hanya jcode yang bertahan dengan momentum stabil di kategori harness AI-agent hemat resource. Lonjakan star tertinggi minggu ini dipegang Buzz (10.558 star dalam sepekan), menandakan minat besar pada infrastruktur kolaborasi manusia-AI yang terintegrasi git.",
