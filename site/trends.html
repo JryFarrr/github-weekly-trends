@@ -270,6 +270,123 @@
 <script type="application/json" id="data">{
   "editions": [
     {
+      "week_end": "2026-08-15",
+      "label": "9–15 Agustus 2026",
+      "summary": "Pekan ini (9–15 Agustus 2026) daftar trending didominasi tema agen AI otonom, infrastruktur LLM, dan memori agen — mulai dari agen coding self-improving PrimeIntellect hingga router API lintas-provider NVIDIA-NeMo Switchyard. Dari 10 repo, 9 di antaranya wajah baru, sementara TencentDB Agent Memory dari Tencent Cloud bertahan dari edisi 2–8 Agustus berkat rilis v2.0.0. Tren lain yang menonjol: model AI mungil untuk perangkat edge (Needle) dan skill diagram untuk Claude Code (diagram-design) yang langsung meledak dengan 13.556 star hanya dalam sepekan sejak dirilis.",
+      "repos": [
+        {
+          "name": "cathrynlavery/diagram-design",
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "lang": "HTML",
+          "stars_week": 13556,
+          "stars_total": 18320,
+          "desc": "29 jenis diagram editorial untuk Claude Code. HTML+SVG mandiri, tanpa shadow, tanpa \"Mermaid-slop\".",
+          "apa": "Skill Claude Code yang menyediakan 29 jenis diagram bergaya editorial dalam bentuk file HTML+SVG mandiri, tanpa memerlukan alat desain seperti Figma.",
+          "use_case": "Dipakai penulis teknis, product manager, dan engineer untuk membuat diagram arsitektur, flowchart, sequence diagram, dan lainnya untuk dokumentasi atau presentasi, lengkap dengan ekstraksi warna/font brand otomatis dari sebuah website.",
+          "kenapa_viral": "Terhubung langsung ke ekosistem Claude Code yang sedang naik daun, mengisi celah nyata pada kualitas diagram AI dibanding Mermaid, dan sudah meraup 13.556 star hanya dalam sepekan sejak dirilis."
+        },
+        {
+          "name": "semantica-agi/semantica",
+          "url": "https://github.com/semantica-agi/semantica",
+          "lang": "Python",
+          "stars_week": 5135,
+          "stars_total": 7849,
+          "desc": "Infrastruktur graph-native untuk context dan sistem AI yang akuntabel.",
+          "apa": "Platform open-source untuk membangun knowledge graph terstruktur dan auditable sebagai lapisan reasoning deterministik di bawah LLM, vector store, dan agent framework.",
+          "use_case": "Digunakan tim AI/ML, data engineer di lingkungan Databricks/Snowflake, serta tim compliance di sektor finansial, kesehatan, dan pemerintahan yang butuh jejak audit atas keputusan agen AI.",
+          "kenapa_viral": "Rilis v0.6.5 (patch keamanan untuk autentikasi API dan pencegahan injeksi) baru saja keluar, bersamaan dengan makin tingginya perhatian enterprise pada governance dan explainability AI."
+        },
+        {
+          "name": "PrimeIntellect-ai/prime-agent",
+          "url": "https://github.com/PrimeIntellect-ai/prime-agent",
+          "lang": "TypeScript",
+          "stars_week": 10739,
+          "stars_total": 16195,
+          "desc": "Agen RLM self-improving untuk workflow coding dan tugas otonom jangka panjang.",
+          "apa": "Agen coding dan riset otonom open-source yang menggabungkan Recursive Language Model dengan \"Continual Harness\" untuk eksekusi tugas mandiri yang bisa berjalan lama dan menyempurnakan dirinya sendiri.",
+          "use_case": "Dipakai developer dan peneliti untuk workflow coding otonom, evaluasi, dan manajemen tugas latar belakang, dengan dukungan sesi yang bisa di-detach dan spawn subagent paralel.",
+          "kenapa_viral": "Berasal dari PrimeIntellect, nama yang sudah dikenal di ruang AI open-source, dengan pendekatan baru (RLM + harness yang bisa self-refine) di tengah tren besar agen coding otonom — meraup 10.739 star dalam sepekan."
+        },
+        {
+          "name": "megadose/holehe",
+          "url": "https://github.com/megadose/holehe",
+          "lang": "Python",
+          "stars_week": 671,
+          "stars_total": 13033,
+          "desc": "Cek keberadaan sebuah alamat email di 120+ situs lewat fitur lupa password.",
+          "apa": "Tool OSINT yang memeriksa apakah suatu alamat email terdaftar di lebih dari 120 platform online, tanpa memberi notifikasi ke target.",
+          "use_case": "Dipakai peneliti keamanan dan investigator OSINT untuk reconnaissance email dalam pengujian keamanan yang sah, tersedia sebagai CLI maupun library Python.",
+          "kenapa_viral": "Repo lawas dengan 13rb star total dan pertumbuhan mingguan yang jauh lebih landai dibanding repo lain di daftar ini — mencerminkan pemakaian berkelanjutan di komunitas keamanan/OSINT, bukan lonjakan viral baru."
+        },
+        {
+          "name": "NVIDIA-NeMo/Switchyard",
+          "url": "https://github.com/NVIDIA-NeMo/Switchyard",
+          "lang": "Rust",
+          "stars_week": 1195,
+          "stars_total": 1550,
+          "desc": "Switchyard membuat aplikasi LLM bisa merutekan trafik lintas model dan provider sambil tetap kompatibel dengan API OpenAI dan Anthropic.",
+          "apa": "Proxy dan library berbasis Rust untuk merutekan permintaan LLM ke berbagai provider dengan translasi otomatis antar-format API.",
+          "use_case": "Dipakai developer yang menjalankan coding agent (Claude Code, Codex) di atas model open-source, serta tim yang butuh benchmarking multi-model dan optimasi biaya/performa.",
+          "kenapa_viral": "Berasal dari NVIDIA-NeMo, dan hampir seluruh total star-nya (1.195 dari 1.550) diraih dalam sepekan ini — pertumbuhan sangat cepat untuk proyek berstatus pre-alpha, menandakan kebutuhan nyata akan router API OpenAI/Anthropic yang netral-provider."
+        },
+        {
+          "name": "vitali87/code-graph-rag",
+          "url": "https://github.com/vitali87/code-graph-rag",
+          "lang": "Python",
+          "stars_week": 1718,
+          "stars_total": 4350,
+          "desc": "RAG definitif untuk monorepo Anda. Query, pahami, dan edit codebase multi-bahasa dengan AI dan knowledge graph.",
+          "apa": "Tool yang mem-parsing codebase multi-bahasa dengan Tree-sitter, membangun knowledge graph di Memgraph, lalu memungkinkan query dan edit kode dengan bahasa natural.",
+          "use_case": "Dipakai developer di monorepo besar untuk memahami struktur kode, melakukan refactor berbasis AST, mendeteksi dead code, dan pencarian struktural — terintegrasi sebagai MCP server untuk Claude Code.",
+          "kenapa_viral": "Fitur baru seperti runtime call tracing, dukungan bahasa Ruby, dan structural search/replace baru saja ditambahkan, sejalan dengan tren besar penggunaan AI untuk memahami codebase raksasa."
+        },
+        {
+          "name": "cactus-compute/needle",
+          "url": "https://github.com/cactus-compute/needle",
+          "lang": "Python",
+          "stars_week": 1929,
+          "stars_total": 5949,
+          "desc": "Model fondasi 14MB untuk perangkat kecil: ponsel, wearable, smart home, dan robot.",
+          "apa": "Needle 2 adalah model bahasa mungil 45 juta parameter yang muat dalam satu file biner 14MB dan berjalan hanya dengan ~28MB RAM, dirancang khusus untuk tool calling dan otomasi perangkat on-device.",
+          "use_case": "Dipakai developer aplikasi AI di ponsel, wearable, smart home, dan robotik yang butuh inferensi cepat tanpa koneksi jaringan, misalnya untuk ekstraksi data terstruktur dan pemanggilan tool dengan skor keyakinan.",
+          "kenapa_viral": "Momentum tren on-device/edge AI yang sedang naik, ditambah klaim ukuran ekstrem (14MB) dan arsitektur unik (Simple Attention Network, kuantisasi Cactus Quants) yang menarik perhatian komunitas mobile/edge AI."
+        },
+        {
+          "name": "macro-inc/macro",
+          "url": "https://github.com/macro-inc/macro",
+          "lang": "Rust",
+          "stars_week": 2159,
+          "stars_total": 3228,
+          "desc": "Workspace terpadu untuk tim: email, chat, dokumen, task, agen, panggilan, dan CRM — saling terhubung dengan shared AI memory.",
+          "apa": "Platform all-in-one yang menggabungkan email, chat, dokumen kolaboratif, manajemen tugas, agen AI, video call, dan CRM dalam satu sistem yang saling ter-link.",
+          "use_case": "Ditujukan untuk tim kecil dan startup yang ingin mengganti tumpukan tool terpisah (mirip alternatif Slack/Notion) dengan satu \"operating system\" kerja yang punya memori AI bersama di level tim.",
+          "kenapa_viral": "Baru open-source penuh (lisensi AGPL-3.0, bukan model \"open core\") dengan arsitektur ambisius — 42+ service dan 167 library Rust — memicu diskusi soal alternatif open-source untuk software kerja korporat yang mahal."
+        },
+        {
+          "name": "ToolJet/ToolJet",
+          "url": "https://github.com/ToolJet/ToolJet",
+          "lang": "JavaScript",
+          "stars_week": 543,
+          "stars_total": 39397,
+          "desc": "Fondasi open-source dari ToolJet AI — platform pembuatan aplikasi enterprise untuk internal tools, dashboard, aplikasi bisnis, workflow, dan agen AI.",
+          "apa": "Platform low-code untuk membangun internal tools dan dashboard secara visual drag-and-drop, dengan edisi enterprise yang menambah fitur AI app generation.",
+          "use_case": "Dipakai developer dan analis bisnis untuk membangun aplikasi internal dengan cepat tanpa banyak coding manual, menghubungkan ke 80+ sumber data.",
+          "kenapa_viral": "Repo mapan dengan 39rb star total dan momentum stabil pekan ini, terdorong ekspansi fitur AI (ToolJet AI) di tengah tren besar \"AI app builder\" untuk internal tools."
+        },
+        {
+          "name": "TencentCloud/TencentDB-Agent-Memory",
+          "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+          "lang": "TypeScript",
+          "stars_week": 4423,
+          "stars_total": 21905,
+          "desc": "Hub memori tim untuk AI Agent — mengubah percakapan, dokumen, dan kode jadi empat aset memori yang bisa dipakai ulang.",
+          "apa": "Sistem manajemen memori level-tim untuk agen AI yang mengonversi percakapan, dokumentasi, dan kode menjadi empat aset: Chat Memory, Skills, Wiki, dan CodeGraph.",
+          "use_case": "Dipakai tim pengembang agen AI dan organisasi yang mengelola banyak agen lintas framework agar tim/agen bisa mewarisi pengetahuan sebelumnya alih-alih mulai dari nol.",
+          "kenapa_viral": "Bertahan dari edisi pekan lalu dan makin menguat — rilis v2.0.0 dengan fitur Team Memory Beta baru mendorong lonjakan minat di tengah tren besar \"agent memory\" sebagai infrastruktur AI agent."
+        }
+      ]
+    },
+    {
       "week_end": "2026-08-08",
       "label": "2–8 Agustus 2026",
       "summary": "Minggu ini trending GitHub diramaikan tooling agen AI lintas kebutuhan: dari memori tim untuk AI agent (TencentDB Agent Memory), coding agent berbasis DeepSeek (Reasonix), hingga alternatif open-source untuk Claude Cowork (openwork) dan orkestrator multi-agent berbasis tmux (SwarmForge) — berdampingan dengan proyek lama yang kembali naik daun seperti AirLLM dan kurikulum AI-For-Beginners dari Microsoft. Dari 10 repo, 9 adalah wajah baru dibanding edisi 26 Juli–1 Agustus, sementara hanya book-to-skill yang bertahan dua minggu berturut-turut. Lonjakan star tertinggi dipegang skill router keamanan reverse-skill (10.400 star dalam sepekan) yang mencerminkan minat tinggi pada tooling AI untuk reverse engineering dan CTF, meski riwayat commit-nya masih sangat tipis untuk ukuran repo sebesar itu.",
