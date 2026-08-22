@@ -277,6 +277,123 @@
 <script type="application/json" id="data">{
   "editions": [
     {
+      "week_end": "2026-08-22",
+      "label": "16–22 Agustus 2026",
+      "summary": "Pekan ini (16–22 Agustus 2026) tema trending bergeser ke tooling developer dan infrastruktur AI praktis: mulai dari spesifikasi plugin Cursor, framework composable Cordis, hingga context database agen AI OpenViking dari Volcengine. Dari 10 repo, 9 di antaranya wajah baru, sementara hanya diagram-design dari Cathryn Lavery yang bertahan dari edisi 9–15 Agustus berkat rilis v2.5.10 yang menambah sepuluh tipe diagram baru. Dua repo klasik ikut melonjak besar — public-apis/public-apis dan MoneyPrinterTurbo, masing-masing meraup lebih dari 10 ribu star dalam sepekan — menunjukkan minat besar pada resource evergreen dan otomatisasi konten video AI. Tren lain yang menonjol: distribusi Linux opinionated omarchy dari pendiri Basecamp DHH, serta OpenLogi yang mengisi celah dukungan Linux untuk perangkat Logitech.",
+      "repos": [
+        {
+          "name": "cathrynlavery/diagram-design",
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "lang": "HTML",
+          "stars_week": 8457,
+          "stars_total": 25358,
+          "desc": "38 jenis diagram editorial untuk Claude Code, Codex, dan Pi. HTML+SVG mandiri.",
+          "apa": "Skill diagram untuk agen coding AI yang menyediakan puluhan jenis diagram bergaya editorial dalam bentuk file HTML+SVG mandiri, tanpa dependensi eksternal.",
+          "use_case": "Dipakai penulis teknis, product manager, dan engineer untuk membuat diagram arsitektur, flowchart, dan dokumentasi lain yang cocok dengan identitas brand/desain situs mereka, termasuk mengimpor ulang diagram draw.io/Mermaid.",
+          "kenapa_viral": "Bertahan dari edisi minggu lalu berkat rilis v2.5.10 yang menambah sepuluh tipe layout baru (Sankey, fishbone, Wardley map, dan lainnya), menunjukkan momentum pengembangan berkelanjutan yang menjaga repo ini tetap trending dua minggu berturut-turut."
+        },
+        {
+          "name": "public-apis/public-apis",
+          "url": "https://github.com/public-apis/public-apis",
+          "lang": "Python",
+          "stars_week": 10990,
+          "stars_total": 468457,
+          "desc": "Daftar kolektif API gratis untuk developer.",
+          "apa": "Daftar kolektif API gratis yang dikurasi komunitas untuk berbagai kebutuhan development.",
+          "use_case": "Dipakai developer di seluruh dunia sebagai referensi cepat untuk menemukan dan mengintegrasikan API publik tanpa biaya ke dalam proyek mereka.",
+          "kenapa_viral": "Repo klasik yang sangat populer (468 ribu+ star total) dan terus mendapat lonjakan star mingguan besar karena sifatnya sebagai referensi evergreen yang terus dibagikan ulang di media sosial dan forum developer."
+        },
+        {
+          "name": "harry0703/MoneyPrinterTurbo",
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+          "lang": "Python",
+          "stars_week": 10470,
+          "stars_total": 114525,
+          "desc": "Buat video pendek HD dari sebuah topik memakai AI dan workflow otomatis.",
+          "apa": "Tool otomatisasi berbasis AI untuk membuat video pendek HD dari sebuah topik, mencakup seluruh pipeline mulai skrip hingga video jadi.",
+          "use_case": "Dipakai content creator dan marketer untuk produksi otomatis video TikTok/Instagram/YouTube Shorts — skrip, footage, subtitle, voice, hingga publish langsung — lewat mode AI Agent, WebUI, API, atau CLI.",
+          "kenapa_viral": "Kebutuhan besar akan otomatisasi konten video pendek di tengah tren short-form video, terbukti dari 17,4 ribu fork dan lonjakan lebih dari 10 ribu star dalam sepekan."
+        },
+        {
+          "name": "AprilNEA/OpenLogi",
+          "url": "https://github.com/AprilNEA/OpenLogi",
+          "lang": "Rust",
+          "stars_week": 4054,
+          "stars_total": 13621,
+          "desc": "Alternatif local-first native untuk Logitech Options+, ditulis dalam Rust.",
+          "apa": "Aplikasi desktop Rust untuk mengelola perangkat Logitech (mouse, keyboard, webcam) tanpa perlu akun atau telemetri.",
+          "use_case": "Dipakai pengguna Linux (yang tidak didukung software resmi Logitech) serta pengguna macOS/Windows yang mengutamakan privasi, untuk remapping tombol, kontrol DPI, dan gesture kustom lewat konfigurasi TOML.",
+          "kenapa_viral": "Mengisi celah dukungan Linux yang tidak disediakan software resmi Logitech, dikombinasikan dengan sentimen privasi/local-first yang kuat di komunitas open-source — baru rilis namun sudah aktif dengan 890 commit dan 185 issue terbuka."
+        },
+        {
+          "name": "cordiverse/cordis",
+          "url": "https://github.com/cordiverse/cordis",
+          "lang": "TypeScript",
+          "stars_week": 3614,
+          "stars_total": 7077,
+          "desc": "Meta-framework untuk \"Spatiotemporal Composability\".",
+          "apa": "Framework Node.js yang menyediakan pola komposisi canggih untuk arsitektur software, menangani aspek struktural dan temporal interaksi antar komponen.",
+          "use_case": "Dipakai developer Node.js untuk membangun sistem plugin/effect yang kompleks dan composable, didukung basis riset akademik.",
+          "kenapa_viral": "Didukung paper akademik \"A Programming Paradigm for Spatiotemporal Composability\" yang menambah kredibilitas, plus 34 pull request aktif menunjukkan komunitas yang berkembang cepat."
+        },
+        {
+          "name": "volcengine/OpenViking",
+          "url": "https://github.com/volcengine/OpenViking",
+          "lang": "Python",
+          "stars_week": 3033,
+          "stars_total": 31953,
+          "desc": "Self-evolving Context Database untuk agen AI. Menyatukan memori agen, knowledge RAG, dan skill.",
+          "apa": "Database konteks open-source untuk agen AI yang bertindak sebagai filesystem virtual (protokol viking://) untuk menyatukan memori, RAG pengetahuan, dan skill.",
+          "use_case": "Dipakai pengembang agen AI untuk retrieval konteks yang transparan dan deterministik (mirip ls/tree/find), menghemat token lewat sistem loading bertingkat (L0/L1/L2).",
+          "kenapa_viral": "Diklaim meningkatkan akurasi tugas memori dari 24–57% menjadi 80–83% dengan token 34–91% lebih hemat — benchmark konkret yang menarik perhatian besar di tengah tren agent memory."
+        },
+        {
+          "name": "basecamp/omarchy",
+          "url": "https://github.com/basecamp/omarchy",
+          "lang": "Shell",
+          "stars_week": 2565,
+          "stars_total": 28081,
+          "desc": "Distribusi Linux yang indah, modern, dan opinionated.",
+          "apa": "Distribusi Linux opinionated buatan DHH (pendiri Basecamp) dengan desain modern dan konfigurasi siap pakai.",
+          "use_case": "Dipakai developer yang migrasi dari macOS/Windows, dengan tools bawaan untuk development, integrasi AI, dan penggunaan sehari-hari, lengkap dengan dokumentasi manual 52 bab.",
+          "kenapa_viral": "Nama besar DHH sebagai pencipta menarik perhatian komunitas developer, ditambah momentum branch \"quattro\" dengan 6.126 commit dan 654 pull request terbuka yang menunjukkan pengembangan sangat aktif."
+        },
+        {
+          "name": "akitaonrails/ai-memory",
+          "url": "https://github.com/akitaonrails/ai-memory",
+          "lang": "Rust",
+          "stars_week": 2404,
+          "stars_total": 4048,
+          "desc": "Solusi memori jangka panjang untuk agen coding CLI dan perpindahan antar vendor.",
+          "apa": "Sistem memori persisten berbasis Rust untuk agen coding AI, memungkinkan pengguna berpindah dari satu agent (misalnya Claude Code) ke agent lain (misalnya Codex) tanpa kehilangan konteks proyek.",
+          "use_case": "Dipakai developer yang bekerja dengan banyak AI coding agent sekaligus untuk handoff mulus — observasi sesi dikompilasi jadi wiki markdown yang bisa dicari dan ter-versi git.",
+          "kenapa_viral": "Menjawab masalah nyata di kalangan power user AI coding agent yang sering berganti tool (Claude Code, Codex, Kimi, dan lainnya) — konsep cross-harness compatibility ini relevan dengan tren multi-agent yang sedang naik."
+        },
+        {
+          "name": "modular/modular",
+          "url": "https://github.com/modular/modular",
+          "lang": "Mojo",
+          "stars_week": 1643,
+          "stars_total": 28801,
+          "desc": "Modular Platform, mencakup MAX dan Mojo.",
+          "apa": "Platform terpadu untuk pengembangan dan deployment AI, berisi compiler bahasa Mojo, MAX accelerator library, dan inference server.",
+          "use_case": "Dipakai tim ML untuk membangun dan menyajikan model AI secara lebih efisien lewat bahasa pemrograman dan library yang dioptimalkan untuk hardware AI.",
+          "kenapa_viral": "Proyek mapan dengan komunitas besar (811 issue dan 301 pull request terbuka) yang terus mendapat momentum seiring meningkatnya kebutuhan infrastruktur inferensi AI yang efisien."
+        },
+        {
+          "name": "cursor/plugins",
+          "url": "https://github.com/cursor/plugins",
+          "lang": "TypeScript",
+          "stars_week": 1582,
+          "stars_total": 4584,
+          "desc": "Spesifikasi plugin Cursor dan kumpulan plugin resmi.",
+          "apa": "Repo resmi berisi spesifikasi plugin untuk Cursor serta koleksi plugin siap pakai untuk berbagai tools developer.",
+          "use_case": "Dipakai developer untuk memperluas kemampuan Cursor lewat plugin modular — integrasi dengan GitHub, Salesforce, HubSpot, Zoom, dan lainnya — serta pola desain CLI yang bisa dijalankan agen coding.",
+          "kenapa_viral": "Momentum besar dari ekosistem Cursor sebagai code editor AI yang sedang naik daun, ditambah kebutuhan developer akan cara terstandar untuk orkestrasi plugin dan agen paralel."
+        }
+      ]
+    },
+    {
       "week_end": "2026-08-15",
       "label": "9–15 Agustus 2026",
       "summary": "Pekan ini (9–15 Agustus 2026) daftar trending didominasi tema agen AI otonom, infrastruktur LLM, dan memori agen — mulai dari agen coding self-improving PrimeIntellect hingga router API lintas-provider NVIDIA-NeMo Switchyard. Dari 10 repo, 9 di antaranya wajah baru, sementara TencentDB Agent Memory dari Tencent Cloud bertahan dari edisi 2–8 Agustus berkat rilis v2.0.0. Tren lain yang menonjol: model AI mungil untuk perangkat edge (Needle) dan skill diagram untuk Claude Code (diagram-design) yang langsung meledak dengan 13.556 star hanya dalam sepekan sejak dirilis.",
